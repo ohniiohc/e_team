@@ -1,0 +1,52 @@
+.footer_menu{
+    height: 60px;
+    background-color: rgb(235, 235, 235);
+}
+.footer_menu_area{
+    width: 1000px;
+    height: 60px;
+    margin: auto;
+}
+
+.footer_menu ul li{
+    font-size: 13px;
+    list-style: none;
+    float: left;
+    line-height: 60px;
+    margin-left: 30px;
+}
+
+
+/* 바닥영역*/
+.footer_wrap{
+    width: 1000px;
+    height: 230px;
+    margin: auto;
+    display: flex;
+}
+/*영역1*/
+.footer_info{
+    width: 420px;
+    padding: 40px;
+}
+
+/*영역2*/
+.footer_logo{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(94, 105, 155);
+}
+
+/*영역3*/
+.footer_text{
+    font-size: 12px;
+    line-height: 20px;
+    color: gray;
+    margin-top: 20px;
+}
+footer a{
+    color: rgb(31, 31, 31);
+}
+footer .a_none{
+    text-decoration: none;
+}
