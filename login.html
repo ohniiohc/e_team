@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에이콘서점 로그인</title>
+    <script>
+        function check(form){
+            if(form.uid.value=="acorn_group5"&&form.upassword.value=="12345"){
+                window.open('main.html') /* 서점 메인 페이지로 링크 */
+            }else{
+                alert("아이디와 비밀번호를 다시 입력하세요.")
+            }
+            
+        }
+    </script>
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+        }
+        #wrap{
+            margin: 10px auto;
+            margin-top: 115px;
+            width: 500px;
+            text-align: center;
+        }
+        h1{
+            margin:40px 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        #login input{
+            width: 330px;
+            height: 43px;
+            padding: 10px;
+            border: 1px solid lightgray;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+        .login_id{
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+        }
+        .login_pw{
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+        }
+        #login button{
+            width: 330px;
+            height: 50px;
+            padding: 15px;
+            border-radius: 7px;
+            border: 1px solid rgb(104, 104, 104);
+            background-color: rgb(104, 104, 104);
+            margin-top: 23px;
+            box-sizing: border-box;
+            font-size: 18px;
+            color: whitesmoke;
+            font-weight: 600;
+        }
+        #login button:hover{
+            background-color: rgb(59, 59, 59);
+            transition: 0.35s;
+        }
+        #login_option{
+            width: 330px;
+            margin: 15px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        #login_account{
+            width: 190px;
+            margin: 15px auto;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .login_inform{
+            color: rgb(136, 136, 136);
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+        .joinus{
+            width: 330px;
+            height: 50px;
+            padding: 15px;
+            border-radius: 7px;
+            border: 1px solid navy;
+            box-sizing: border-box;
+            font-size: 17px;
+            font-weight: 600;
+            background-color: transparent;
+            margin-bottom: 20px;
+        }
+        .joinus:hover{
+            background-color: rgba(0, 0, 128, 0.09);
+            transition: 0.35s;
+        }
+        .joinus a{
+            color: navy;
+        }
+        hr{
+            width: 330px;
+            margin: 0 auto;
+            border: 1px solid rgba(211, 211, 211, 0.48);
+            margin-bottom: 20px;
+        }
+        .ordercheck a{
+            font-size: 14px;
+            color: gray;
+        }
+        .ordercheck a:hover{
+            text-decoration: underline;
+        }
+        #login_telnum{
+            width: 330px;
+            height: 60px;
+            padding: 20px;
+            border-radius: 7px;
+            border: 1px solid navy;
+            box-sizing: border-box;
+            font-size: 15px;
+            border: none;
+            background-color: rgb(225, 244, 243);
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form name="login">
+    <div id="wrap">
+        <h1>에이콘서점 🐿</h1>
+        
+        <div id="login">
+            <input type="text" name="uid" class="login_id" placeholder="아이디를 입력해 주세요.">
+            <input type="password" name="upassword" class="login_pw" placeholder="비밀번호를 입력해 주세요."><!-- 가운데 줄 합쳐지게 어떻게? 특정한 아이디/비번만 인식. 아이디:acorn_group5 / 비번:12345 -->
+            <button onclick="check(this.form)" value="login">로그인</button>        
+        </div>
+    </form>
+
+        <div id="login_option">
+            <p><input type="checkbox" id="save_id"><label for="save_id"> 아이디 저장</label></p>
+            <!-- 저장 기능 구현 못함. 쿠키를 이용해야 한다던데.. -->
+            <p><a href="#" style="color:rgb(104, 104, 104)">아이디/비밀번호 찾기</a></p><!-- 깡통아이콘 -->
+        </div>
+
+        <div id="login_account"><!-- 깡통아이콘 -->
+            <a href="#"><img src="./image/login_naver.png" alt="네이버" width="38px"></a>
+            <a href="#"><img src="./image/login_kakao.png" alt="카카오" width="38px"></a>
+            <a href="#"><img src="./image/login_google.png" alt="구글" width="38px"></a>
+            <a href="#"><img src="./image/login_apple.png" alt="애플" width="38px"></a>
+        </div>
+
+        <p class="login_inform">
+            개인정보 보호를 위해 공용 PC에서 사용 시 SNS 계정의 로그아웃<br>
+            상태를 꼭 확인해 주세요.
+        </p>
+
+        <button class="joinus"><a href="./register.html" >회원가입</a></button> <!-- 회원가입 화면으로 토스 -->
+
+        <hr>
+
+        <div class="ordercheck">
+            <a href="#" style="color: rgb(59, 59, 59)">비회원 주문조회</a><!-- 깡통아이콘 -->
+            <img src="./image/arrow.png" width="10px">
+        </div>
+
+       <button id="login_telnum"><a href="#"style="color: rgb(59, 59, 59)"><img src="./image/phone.png" width="18px"> 휴대폰번호로 로그인</a></button><!-- 깡통아이콘 -->
+</body>
+</html>
