@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에이콘서점 회원가입</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            margin: 10px auto;
+            margin-top: 100px;
+            width: 500px;
+            text-align: center;
+        }
+        h1{
+            margin:40px 0;
+        }
+        hr{
+            margin-bottom: 40px;
+        }
+        table{
+/*             border: 1px solid pink; */
+            border-collapse: collapse;
+            margin: 10px auto;
+            margin-bottom: 40px;
+            width: 500px;
+            border-radius: 15px;
+            background-color: rgba(61, 191, 184, 0.90);
+        }
+        table th, td{
+/*             border: 1px solid pink; */
+            padding: 10px;
+        }
+        table th{
+            text-align: right;
+            width: 90px;
+        }       
+        table td{
+            text-align: left;
+        }
+        .email input{
+            width: 100px;
+        }
+        td input{
+            height: 25px;
+            border: 1px solid navy;
+            border-radius: 2.5px;
+            
+        }
+        .click{
+            height: 25px;
+            border: 1px solid black;
+            padding: 2px;
+            border-radius: 3px;
+            background-color: rgb(59, 59, 59);
+            color: whitesmoke;
+        }
+        #button{
+            width: 500px;
+            margin: 15px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        #button input{
+            width: 240px;
+            height: 50px;
+            border-radius: 7px;
+            border: 2px solid rgb(59, 59, 59);
+            font-size: 17px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .btn1{
+            background-color: rgba(25, 114, 197, 0.173);
+        }
+        .btn1:hover{
+            background-color: rgba(25, 88, 197, 0.250);
+            transition: 0.35s;
+        }
+        .btn2{
+            background-color: rgba(165, 42, 42, 0.218);
+            transition: 0.35s;
+        }
+        .btn2:hover{
+            background-color: rgba(165, 0, 0, 0.300);
+            transition: 0.35s;
+        }
+        .addr_long{
+            width: 335px;
+            margin-top: 5px;
+        }
+        
+    </style>
+    <script>
+        function valPw(){
+            if(document.getElementById("#upw")==document.getElementById("#upw2")){
+                alert("비밀번호가 일치합니다.")
+            } else{
+                alert("올바른 비밀번호를 입력해주세요.")
+            }
+        } /* 왜 오류가 나지...ㅠ */
+    </script>
+</head>
+<body>
+    <div id="wrap">
+    <h1>에이콘서점 회원가입</h1>
+    <form action="join">
+        <table id="tb1">
+            <h2>기본 정보</h1>
+            <tr>
+                <th>아이디</th>
+                <td><input type="text" name="uid" id="uid" required>
+                <input type="button" value="중복확인" onclick="getId()" class="click">
+                <input type="button" value="id사용" onclick="setId()" class="click"></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="password" name="upw" id="upw" required></td>
+            </tr>
+            <tr>
+                <th>비밀번호 확인</th>
+                <td><input type="password" name="upw2" id="upw2">
+                <input type="button" value="확인" onclick="valPw()" class="click" required></td>
+            </tr>
+            <tr>
+                <th>이메일주소</th>
+                <td class="email"><input type="email" name="uemail" id="uemail"> @ <input type="email" name="email_site">
+                <select name="email_option" id="email_option" class="click">
+                    <option value="default">직접 입력</option> <!-- 입력한 값이 그대로 @ 오른쪽으로 들어가면 좋겠는데ㅠㅠ 어렵네요 -->
+                    <option value="gm">gmail.com</option>
+                    <option value="nv">naver.com</option>
+                    <option value="hm">hanmail.net</option>
+                    <option value="dm">daum.net</option>
+                    <option value="nt">nate.com</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>휴대폰</th>
+                <td><input type="tel" name="utel" id="utel"></td>
+            </tr>
+        </table>
+        <table id="tb2">
+            <h2>배송 정보</h2>
+            <tr>
+                <th>배송지명 입력</th>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th>주소 입력</th>
+                <td><input type="text"> <input type="button" value="주소찾기" class="click"><br><input type="text" class="addr_long">
+            </tr>
+            <tr>
+                <th>배송 메모</th>
+                <td><textarea name="shipmemo" id="shipmemo" cols="30" rows="3"></textarea></td>
+            </tr>
+        </table>
+        <div id="button">
+            <input class="btn1" type="button" onclick="reset" value="다시 작성하기">
+            <input  class="btn2" type="button" onclick="submit" value="가입하기">
+        </div>
+    </form>
+    </div>
+</body>
+</html>
