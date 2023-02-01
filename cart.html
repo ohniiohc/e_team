@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main_container *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* border: 1px solid black; */
+        }
+        .cart tr td{
+            height: 195px;
+        }
+        /* ------------------------------------------------------------- */
+        .cart tr td:nth-child(1){
+            width: 42px;
+            padding: 24px 10px;
+        }
+        /* ------------------------------------------------------------- */
+        .cart tr td:nth-child(2){
+            width: 486px;
+            padding: 24px 24px 24px 0;
+        }
+        .cart tr td:nth-child(2) .book_wrap{
+            display: flex;
+            font-size: 14px;
+        }
+        .cart tr td:nth-child(2) .bw_1{
+            width: 82px;
+        }
+        .cart tr td:nth-child(2) .bw_2{
+            margin-left: 12px;
+        }
+        .cart tr td:nth-child(2) .bw_2_1{
+            margin-bottom: 18px;
+        }
+        .cart tr td:nth-child(2) .bw_2_2_1_1{
+            color: #4dac27;
+        }
+        .cart tr td:nth-child(2) .bw_2_2_1_4{
+            color: #666;
+            font-size: 12px;
+        }
+        /* ------------------------------------------------------------- */
+        .cart tr td:nth-child(3){
+            width: 140px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .cart tr td:nth-child(3) .price_wrap{
+            margin-bottom: 8px;
+        }
+        .cart tr td:nth-child(3) .qty_wrap{
+            width: 80px;
+            height: 30px;
+            border: 1px solid #666;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .cart tr td:nth-child(3) .qty_wrap button{
+            width: 27px;
+            border: none;
+        }
+        .cart tr td:nth-child(3) .qty_wrap input{
+            width: 28px;
+            font-size: 14px;
+            text-align: center;
+            border: none;
+            outline: none;
+        }
+        .cart tr td:nth-child(3) .qty_wrap button:nth-child(1){
+            background: url(media/Minus.png) center no-repeat;
+            background-size: 10px;
+        }
+        .cart tr td:nth-child(3) .qty_wrap button:nth-child(3){
+            background: url(media/Plus.png) center no-repeat;
+            background-size: 10px;
+        }
+        .cart tr td:nth-child(3) .qty_wrap input::-webkit-outer-spin-button, input::-webkit-inner-spin-button{
+            -webkit-appearance: none;
+        }
+        .cart tr td:nth-child(3) .qty_wrap input[type=number]{
+            -moz-appearance: textfield;
+        }
+        /* ------------------------------------------------------------- */
+        .cart tr td:nth-child(4){
+            width: 222px;
+            padding: 24px;
+            font-size: 12px;
+        }
+        .cart tr td:nth-child(4) hr{
+            border: 1px dashed #bbb;
+            margin: 12px 0;
+        }
+        .cart tr td:nth-child(4) p{
+            margin-top: 6px;
+        }
+        .cart tr td:nth-child(4) .ship_wrap span{
+            color: #fff;
+            padding: 2px 4px;
+            background-color: #5055b1;
+            border-radius: 14px;
+        }
+        .cart tr td:nth-child(4) .visit_wrap span{
+            color: #5055b1;
+            padding: 2px 4px;
+            border: 1px solid #5055b1;
+            border-radius: 14px;
+        }
+        /* ------------------------------------------------------------- */
+    </style>
+    <script>
+        function minus(minusBtn){
+            let count=document.querySelector("#count");
+            let countValue=parseInt(count.value);
+            countValue--;
+            count.value=countValue;
+            sum(minusBtn.nextElementSibling);
+        }
+        function plus(plusBtn){
+            let count=document.querySelector("#count");
+            let countValue=parseInt(count.value);
+            countValue++;
+            count.value=countValue;
+            sum(plusBtn.previousElementSibling);
+        }
+        function sum(inputNumber){
+            if(inputNumber.value<1){
+                inputNumber.value=1;
+            }else if(inputNumber.value>99){
+                inputNumber.value=99;
+            }
+            let price=0;
+            let unitPrice=parseInt(inputNumber.parentElement.parentElement.previousElementSibling.lastElementChild.lastElementChild.lastElementChild.lastElementChild.firstElementChild.nextElementSibling.lastElementChild.innerHTML);
+            let qty=inputNumber.value;
+            let multiply=inputNumber.parentElement.previousElementSibling.firstElementChild.lastElementChild;
+            price=unitPrice*qty;
+            multiply.innerHTML=price;
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <div class="main_container">
+            <div class="cart_wrap">
+                <table class="cart">
+                    <tr>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <div class="book_wrap">
+                                <img class="bw_1" src="media/cart_img_01.jpg" alt="">
+                                <div class="bw_2">
+                                    <div class="bw_2_1">
+                                        [국내도서] 참을 수 없는 존재의 가벼움
+                                    </div>
+                                    <div class="bw_2_2">
+                                        <span class="bw_2_2_1">
+                                            <span class="bw_2_2_1_1">10%</span>
+                                            <span class="bw_2_2_1_2">
+                                               <b>13500</b>
+                                            </span>
+                                            <span class="bw_2_2_1_3">원</span>
+                                            <span class="bw_2_2_1_4">(750P)</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="price_wrap">
+                                <span>
+                                    <b>13500</b>
+                                </span>
+                                <span>원</span>
+                            </div>
+                            <div class="qty_wrap">
+                                <button onclick="minus(this)"></button>
+                                <input type="number" value="1" id="count" onkeyup="sum(this)">
+                                <button onclick="plus(this)"></button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ship_wrap">
+                                <span><b>택배배송</b></span>
+                                <p><b>내일(2/3,금) 도착예정</b></p>
+                            </div>
+                            <hr>
+                            <div class="visit_wrap">
+                                <span><b>바로드림</b></span>
+                                <p>
+                                    <b>2시간 이후 수령가능 ,<br>광화문점</b>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <div class="book_wrap">
+                                <img class="bw_1" src="media/cart_img_02.jpg" alt="">
+                                <div class="bw_2">
+                                    <div class="bw_2_1">
+                                        [국내도서] 나미야 잡화점의 기적
+                                    </div>
+                                    <div class="bw_2_2">
+                                        <span class="bw_2_2_1">
+                                            <span class="bw_2_2_1_1">10%</span>
+                                            <span class="bw_2_2_1_2">
+                                               <b>13320</b>
+                                            </span>
+                                            <span class="bw_2_2_1_3">원</span>
+                                            <span class="bw_2_2_1_4">(740P)</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="price_wrap">
+                                <span>
+                                    <b>13320</b>
+                                </span>
+                                <span>원</span>
+                            </div>
+                            <div class="qty_wrap">
+                                <button onclick="minus(this)"></button>
+                                <input type="number" value="1" id="count" onkeyup="sum(this)">
+                                <button onclick="plus(this)"></button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ship_wrap">
+                                <span><b>택배배송</b></span>
+                                <p><b>내일(2/3,금) 도착예정</b></p>
+                            </div>
+                            <hr>
+                            <div class="visit_wrap">
+                                <span><b>바로드림</b></span>
+                                <p>
+                                    <b>2시간 이후 수령가능 ,<br>광화문점</b>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <div class="book_wrap">
+                                <img class="bw_1" src="media/cart_img_03.jpg" alt="">
+                                <div class="bw_2">
+                                    <div class="bw_2_1">
+                                        [국내도서] 이방인
+                                    </div>
+                                    <div class="bw_2_2">
+                                        <span class="bw_2_2_1">
+                                            <span class="bw_2_2_1_1">10%</span>
+                                            <span class="bw_2_2_1_2">
+                                               <b>9000</b>
+                                            </span>
+                                            <span class="bw_2_2_1_3">원</span>
+                                            <span class="bw_2_2_1_4">(500P)</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="price_wrap">
+                                <span>
+                                    <b>9000</b>
+                                </span>
+                                <span>원</span>
+                            </div>
+                            <div class="qty_wrap">
+                                <button onclick="minus(this)"></button>
+                                <input type="number" value="1" id="count" onkeyup="sum(this)">
+                                <button onclick="plus(this)"></button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ship_wrap">
+                                <span><b>택배배송</b></span>
+                                <p><b>내일(2/3,금) 도착예정</b></p>
+                            </div>
+                            <hr>
+                            <div class="visit_wrap">
+                                <span><b>바로드림</b></span>
+                                <p>
+                                    <b>2시간 이후 수령가능 ,<br>광화문점</b>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="">
+                <ul>
+                    <li>하하</li>
+                    <li>호호</li>
+                    <li>히히히</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
