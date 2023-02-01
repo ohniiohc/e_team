@@ -22,14 +22,14 @@
     <title>Document</title>
     <script>
         function paused(obj){
-            let lis  = document.querySelectorAll(".main_banner ul li") ;
-            if(obj.checked){  
-                for( let i=0; i< lis.length; i++ ){
-                    lis[i].style.animationPlayState = "paused";
+            let lis=document.querySelectorAll(".main_banner ul li");
+            if(obj.checked){
+                for(let i=0; i<lis.length; i++){
+                    lis[i].style.animationPlayState="paused";
                 }
             }else{
-                for( let i=0; i< lis.length; i++ ){
-                    lis[i].style.animationPlayState = "running";
+                for(let i=0; i<lis.length; i++){
+                    lis[i].style.animationPlayState="running";
                 }
             }
         }
@@ -38,112 +38,94 @@
             let category=document.querySelectorAll(".category");
             for(let i=0; i<category.length; i++){
                 if(radioValue==i){
-                    category[i].style.display = "block";
-                }
-                else{
-                    category[i].style.display = "none";
+                    category[i].style.display="block";
+                }else{
+                    category[i].style.display="none";
                 }
             }
         }
     </script>
 </head>
-<body >
+<body>
     <div class="header">
-        <!--로고영역-->
         <div class="logo_area">
-          <h1>
-            <a class="logo" href="main.html">Acorn 에이콘문고</a>
-          </h1>
+            <h1>
+                <a class="logo" href="main.html">Acorn 에이콘문고</a>
+            </h1>
         </div>
-  
-        <!--검색바영역-->
         <div class="search_area">
-          <!--검색바-->
-          <div class="input-box">
-            <a href="#"><i class="fa-solid i1 fa-magnifying-glass fa-2x"></i></a>
-            <input type="text" />
-            <a href="#"><i class="fa-solid fa-keyboard fa-2x"></i></a>
-            <a href="#"><i class="fa-solid fa-microphone fa-2x"></i></a>
-          </div>
-        </div>
-  
+            <div class="input-box">
+                <a href="#"><i class="fa-solid i1 fa-magnifying-glass fa-2x"></i></a>
+                <input type="text" />
+                <a href="#"><i class="fa-solid fa-keyboard fa-2x"></i></a>
+                <a href="#"><i class="fa-solid fa-microphone fa-2x"></i></a>
+            </div>
+        </div>                
         <div class="servicemenu_area">
-          <div class="servicemenu">
-            <a href="cart.html"><i class="fa-solid fa-cart-plus fa-2x"></i></a>
-            <span class="gard">|</span>
-            <a href="mypage.html"><i class="fa-solid fa-person fa-2x"></i></a>
-            <span class="gard">|</span>
-            <a href="login.html"><i class="fa-solid fa-right-to-bracket fa-2x"></i></a>
-          </div>
+            <div class="servicemenu">
+                <a href="shoppingcart.html"><i class="fa-solid fa-cart-plus fa-2x"></i></a>
+                <span class="gard">|</span>
+                <a href="mypage.html"><i class="fa-solid fa-person fa-2x"></i></a>
+                <span class="gard">|</span>
+                <a href="login.html"><i class="fa-solid fa-right-to-bracket fa-2x"></i></a>
+            </div>
         </div>
-      </div>
-  
-      <div class="nav">
+    </div>
+    <div class="nav">
         <ul class="menu_wrap">
-          <li class="menu1">
-            <a class="menu1_title" href="">국내도서</a>
-            <!-- 숨김상세메뉴-->
-            <ul>
-              <a href="booklist.html"><li>소설</li></a>
-              <a href="booklist.html"><li>시/에세이</li></a>
-              <a href="booklist.html"><li>경영/경제</li></a>
-              <a href="booklist.html"><li>자기계발</li></a>
-            </ul>
-          </li>
-          <li class="menu1">
-            <a class="menu1_title" href="">외국도서</a>
-            <!-- 숨김상세메뉴-->
-            <ul>
-              <a href="booklist.html"><li>소설</li></a>
-              <a href="booklist.html"><li>시/에세이</li></a>
-              <a href="booklist.html"><li>경영/경제</li></a>
-              <a href="booklist.html"><li>자기계발</li></a>
-            </ul>
-          </li>
-          <li class="menu1">
-            <a class="menu1_title" href="">eBook</a>
-            <!-- 숨김상세메뉴-->
-            <ul>
-              <a href="booklist.html"><li>소설</li></a>
-              <a href="booklist.html"><li>시/에세이</li></a>
-              <a href="booklist.html"><li>경영/경제</li></a>
-              <a href="booklist.html"><li>자기계발</li></a>
-            </ul>
-          </li>
-          <li class="menu1">
-            <a class="menu1_title" href="">웹소설</a>
-            <!-- 숨김상세메뉴-->
-            <ul>
-              <a href="booklist.html"><li>웹소설</li></a>
-              <a href="booklist.html"><li>시/에세이</li></a>
-            </ul>
-          </li>
-          <li class="menu1">
-            <a class="menu1_title" href="">음반</a>
-            <!-- 숨김상세메뉴-->
-            <ul>
-              <a href=booklist.html"><li>음반</li></a>
-              <a href=booklist.html"><li>DVD</li></a>
-              <a href=booklist.html"><li>블루레이</li></a>
-            </ul>
-          </li>
-          <li class="menu1">
-            <a class="menu1_title" href="">중고도서</a>
-            <!-- 숨김상세메뉴-->
-            <ul>
-              <a href=booklist.html"><li>중고도서판매</li></a>
-              <a href=booklist.html"><li>중고도서구매</li></a>
-            </ul>
-          </li>
+            <li class="menu1">
+                <a class="menu1_title" href="booklist.html">국내도서</a>
+                <ul>
+                    <a href="booklist.html"><li>소설</li></a>
+                    <a href="booklist.html"><li>시/에세이</li></a>
+                    <a href="booklist.html"><li>경영/경제</li></a>
+                    <a href="booklist.html"><li>자기계발</li></a>
+                </ul>
+            </li>
+            <li class="menu1">
+                <a class="menu1_title" href="booklist.html">외국도서</a>
+                <ul>
+                    <a href="booklist.html"><li>소설</li></a>
+                    <a href="booklist.html"><li>시/에세이</li></a>
+                    <a href="booklist.html"><li>경영/경제</li></a>
+                    <a href="booklist.html"><li>자기계발</li></a>
+                </ul>
+            </li>
+            <li class="menu1">
+                <a class="menu1_title" href="booklist.html">eBook</a>
+                <ul>
+                    <a href="booklist.html"><li>소설</li></a>
+                    <a href="booklist.html"><li>시/에세이</li></a>
+                    <a href="booklist.html"><li>경영/경제</li></a>
+                    <a href="booklist.html"><li>자기계발</li></a>
+                </ul>
+            </li>
+            <li class="menu1">
+                <a class="menu1_title" href="booklist.html">웹소설</a>
+                <ul>
+                    <a href="booklist.html"><li>웹소설</li></a>
+                    <a href="booklist.html"><li>시/에세이</li></a>
+                </ul>
+            </li>
+            <li class="menu1">
+                <a class="menu1_title" href="booklist.html">음반</a>
+                <ul>
+                    <a href="booklist.html"><li>음반</li></a>
+                    <a href="booklist.html"><li>DVD</li></a>
+                    <a href="booklist.html"><li>블루레이</li></a>
+                </ul>
+            </li>
+            <li class="menu1">
+                <a class="menu1_title" href="booklist.html">중고도서</a>
+                <ul>
+                    <a href="booklist.html"><li>중고도서판매</li></a>
+                    <a href="booklist.html"><li>중고도서구매</li></a>
+                </ul>
+            </li>
         </ul>
-      </div>
-    </body>
-
+    </div>
     <main>
         <div class="main_container home_main_container">
-            <!-------------------------------->
-            <!----------- 광고배너 ----------->
-            <!-------------------------------->
             <div class="main_banner">
                 <div class="banner_ctrl">
                     <input type="checkbox" id="puause" onclick="paused(this)">
@@ -167,9 +149,6 @@
                     </li>
                 </ul>
             </div>
-            <!-------------------------------->
-            <!--------- 화제의 신상 ---------->
-            <!-------------------------------->
             <div class="main_new">
                 <h2>화제의 신상</h2>
                 <div class="new_ctrl">
@@ -431,9 +410,6 @@
                     </div>
                 </div>
             </div>
-            <!-------------------------------->
-            <!------------ 베스트 ------------>
-            <!-------------------------------->
             <div class="main_bestseller">
                 <h2>베스트셀러</h2>
                 <ul>
@@ -551,58 +527,48 @@
             </div>
         </div>
     </main>
-
-
-    <hr />
     <footer>
-      <!--  -->
-      <div class="footer_menu">
-        <div class="footer_menu_area">
-          <ul>
-            <li><a class="a_none" href="">회사소개</a></li>
-            <li><a class="a_none" href="">이용약관</a></li>
-            <li><a href="">개인정보처리방침</a></li>
-            <li><a class="a_none" href="">청소년보호정책</a></li>
-            <li><a class="a_none" href="">고객센터</a></li>
-            <li><a class="a_none" href="">협력사</a></li>
-            <li><a class="a_none" href="">제휴제안</a></li>
-            <li><a class="a_none" href="">광고문의</a></li>
-          </ul>
+        <div class="footer_menu">
+            <div class="footer_menu_area">
+                <ul>
+                    <li><a class="a_none" href="">회사소개</a></li>
+                    <li><a class="a_none" href="">이용약관</a></li>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a class="a_none" href="">청소년보호정책</a></li>
+                    <li><a class="a_none" href="">고객센터</a></li>
+                    <li><a class="a_none" href="">협력사</a></li>
+                    <li><a class="a_none" href="">제휴제안</a></li>
+                    <li><a class="a_none" href="">광고문의</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
-
-      <!--  -->
-      <div class="footer_wrap">
-        <div class="footer_info">
-          <div class="footer_logo">에이콘문고</div>
-          <div>
-            <p class="footer_text">
-              ㈜ 에이콘문고 홍대 대표이사 : E조 <br />
-              사업자등록번호 : 123-45-6789 <br />
-              대표전화 : 1234-5678 (발신자 부담전화) 팩스 : 1234-5678-1234
-              (지역번호공통) <br />
-              서울특별시 통신판매업신고번호 : 제 653호 ▶<a href=""
-                >사업자정보확인</a
-              >
-            </p>
-            <p class="footer_text">
-              COPYRIGHT(C) ACRON BOOK CENTRE ALL RIGHTS RESERVED.
-            </p>
-          </div>
+        <div class="footer_wrap">
+            <div class="footer_info">
+                <div class="footer_logo">에이콘문고</div>
+                    <div>
+                        <p class="footer_text">
+                            ㈜ 에이콘문고 홍대 대표이사 : E조 <br />
+                            사업자등록번호 : 123-45-6789 <br />
+                            대표전화 : 1234-5678 (발신자 부담전화) 팩스 : 1234-5678-1234
+                            (지역번호공통) <br />
+                            서울특별시 통신판매업신고번호 : 제 653호 ▶<a href="">사업자정보확인</a>
+                        </p>
+                        <p class="footer_text">
+                            COPYRIGHT(C) ACRON BOOK CENTRE ALL RIGHTS RESERVED.
+                        </p>
+                    </div>
+                </div>
+                <div class="footer_info">
+                    <p class="footer_text">
+                        LG U+ 구매안전서비스 ▶ <a href="">서비스 가입 확인</a>
+                    </p>
+                    <p class="footer_text">
+                        고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한
+                        LG유플러스의 구매안전서비스를 이용하실 수 있습니다.
+                    </p>
+                </div>
+            </div>
         </div>
-
-        <div class="footer_info">
-          <p class="footer_text">
-            LG U+ 구매안전서비스 ▶ <a href="">서비스 가입 확인</a>
-          </p>
-          <p class="footer_text">
-            고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한
-            LG유플러스의 구매안전서비스를 이용하실 수 있습니다.
-          </p>
-        </div>
-      </div>
     </footer>
-  </body>
-
 </body>
 </html>
