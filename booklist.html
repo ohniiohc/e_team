@@ -1,282 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>베스트셀러</title>
-     <style>
-          *{
-               margin: 0;
-               padding: 0;
-          }
-          /* div{
-               border: 1px solid lightgray;
-          } */
-          #productList{
-               margin: 50px;
-          }
-          #aboutList h1{
-               margin: 20px;
-          }
-          #aboutList p{
-               margin: 20px;
-               font-size: 18px;
-               font-weight: 500;
-               color: rgb(85, 84, 84);
-          }
-          #bookCtg{
-               margin: 20px; /* 스크롤바 애니메이션을 넣고 싶었으나...도르륵..ㅜ */
-          }
-          #bookCtg a{
-               text-decoration: none;
-               font-size: 17px;
-               color: rgb(85, 84, 84);
-          }
-          #bookCtg button{
-               display: inline-block;
-               margin: 3px;
-               padding: 10px 20px;
-               background-color: rgba(235, 235, 235, 0.577);
-               border-radius: 50px;
-               border: none;
-          }
-          #bookCtg button:hover{
-               background-color: rgba(184, 184, 184, 0.577);
-               transition: 0.35s;
-          }
-          #setDate, #setList{
-               display: flex;
-               justify-content: space-between;
-               padding: 10px;
-               margin: 20px;
-               font-size: 25px;
-               font-weight: 800;
-               background-color: rgb(247, 203, 43);
-          }
-          #setDate div{
-               display: inline-block;
-          }
-          #setDate select{
-               font-size: 18px;
-               border-radius: 10px;
-               padding: 5px;
-               margin: 0 20px;
-          }
-          #setList div{
-               display: inline-block;
-          }
-          #setList a{
-               text-decoration: none;
-               color: rgb(85, 84, 84);
-          }
-          .bookInfo_wrap{
-               /* background-color: lavender; */
-               margin: 0 auto;
-               width: 1500px;
-               height: 330px;
-               border-bottom: 1px solid gray;
-               border-top: 1px solid gray;
-          }
-          .bookInfo{
-               /* background-color: gold; */
-               margin: 7px auto;
-               display: flex;
-               width: 1300px;
-               height: 280px;
-               align-items: center;
-               margin-top: 20px;
-               padding-left: 35px;
-          }
-          .bookInfo div{
-               margin: 5px;
-/*                height: 265px; */
-          }
-          .bookInfo .img{
-               width: 200px;
-               height: 240px;
-               margin-right: 40px;
-               /* background-color: red; */
-          }
-          .img img{
-               width: 200px;
-               height: 240px;
-          }
-          .img img:hover{
-               transition: 0.35s;
-               transform: scale(1.05);
-          }
-          .listNum{ 
-               width: 60px;
-               height: 17px;
-               padding: 3px;
-               border: none;
-               border-bottom-right-radius: 10px;
-               border-top-left-radius: 10px;
-               background-color: rgb(47, 160, 29);
-               color: whitesmoke;
-               text-align: center;
-               font-weight: 800;
-               font-size: 14px;
-               text-align: center;
-          }
-          .badge{
-               display: flex;
-               justify-content:left;
-          }
-          .badge div{
-               display: inline-block;
-               font-size: 13px;
-               height: 13px;
-               padding: 3px;
-               border-radius: 4px;
-               font-weight: 500;
-               color: rgb(96, 96, 96);
-               border: 0.5px solid rgb(96, 96, 96);
-          }
-          .badge .badge_md{
-               color: midnightblue;
-               border: 0.5px solid midnightblue;
-          }
-          .bookTitle{
-               font-size: 20px;
-               font-weight: 700;
-          }
-          .bookTitle:hover{
-               text-decoration: underline;
-               transition: 0.2s;
-          }
-          .bookPub{
-               font-size: 16px;
-               color: rgb(96, 96, 96);
-               padding-bottom: 10px;
-          }
-          .bookPrice{
-               color: black;
-               font-weight: 800;
-               font-size: 17px;
-               padding-bottom: 10px;
-          }
-          .greenAcc{
-               color: rgb(47, 160, 29);
-               font-weight: 800;
-               margin-right: 3px;
-          }
-          .originPrice{
-               text-decoration: line-through;
-               font-size: 15px;
-               margin-left: 5px;
-               font-weight: 450;
-               color: rgb(96, 96, 96);
-          }
-          .bookPage{
-               font-size: 15px;
-               margin-left: 5px;
-               padding-right: 6px;
-               font-weight: 500;
-               color: rgb(96, 96, 96);
-          }
-          .about{
-               text-align: left;
-               display: block;
-               white-space: break-word;
-               overflow: hidden;
-               text-overflow: ellipsis;
-               line-height: 1.2;
-               display: -webkit-box;
-               -webkit-line-clamp: 2;
-               -webkit-box-orient: vertical;
-               color: rgb(96, 96, 96);
-          }
-          .review{
-               font-size: 16px;
-               font-weight: 700;
-               color: black;
-               padding-bottom: 10px;
-          }
-          .gray{
-               color: rgb(96, 96, 96);
-               font-weight: 400;
-               font-size: 15px;
-          }
-          .review_sum{
-               color: midnightblue;
-               font-size: 17px;
-          }
-          .bookInfo .info{
-               width: 600px;
-          }
-          .bookInfo .shipping{
-               width: 200px;
-               text-align: center;
-               display: flex;
-               flex-direction: column;
-               align-items: center;
-          }
-          .shipping_sum{
-               width: 80px;
-               height: 20px;
-               border-radius: 10px;
-               border: none;
-               background-color: rgba(157, 157, 228, 0.321);
-               color: midnightblue;
-               font-weight: 500;
-               letter-spacing: 0.5px;
-               font-size: 15px;
-               padding-top: 4px;
-          }
-          .shipping_spec{
-               padding-top: 5px;
-               font-size: 17px;
-               letter-spacing: 0.5px;
-               line-height: 1.3;
-          }
-          .bold{
-               font-weight: bold;
-          }
-          .bookInfo .buy{
-               width: 200px;
-               display: flex;
-               flex-direction: column;
-               flex-wrap: wrap;
-               text-align: center;
-               align-items: center;
-          }
-          .buy a{
-               text-decoration: none;
-               color: whitesmoke;
-               font-size: 17px;
-               font-weight: 600;
-          }          
-          .cart{
-               background-color: rgb(123, 122, 122);
-               width: 150px;
-               height: 50px;
-               display: block;
-               margin-bottom: 10px;
-               border-radius: 10px;
-               border: none;
-          }
-          .buyNow{
-               background-color: rgb(77, 77, 173);
-               width: 150px;
-               height: 50px;
-               display: block;
-               border-radius: 10px;
-               border: none;
-          }
-          .cart:hover{
-               background-color: rgb(91, 91, 91);
-               transition: 0.35s;
-          }
-          .buyNow:hover{
-               background-color: rgb(36, 36, 140);
-               transition: 0.35s;
-          }
-
-     </style>
+     
 </head>
 <body>
+
+     <div class="header">
+          <!--로고영역-->
+          <div class="logo_area">
+            <h1>
+              <a class="logo" href="aa.html">Acorn 에이콘문고</a>
+            </h1>
+          </div>
+    
+          <!--검색바영역-->
+          <div class="search_area">
+            <!--검색바-->
+            <div class="input-box">
+              <a href="#"><i class="fa-solid i1 fa-magnifying-glass fa-2x"></i></a>
+              <input type="text" />
+              <a href="#"><i class="fa-solid fa-keyboard fa-2x"></i></a>
+              <a href="#"><i class="fa-solid fa-microphone fa-2x"></i></a>
+            </div>
+          </div>
+    
+          <div class="servicemenu_area">
+            <div class="servicemenu">
+              <a href="#"><i class="fa-solid fa-cart-plus fa-2x"></i></a>
+              <span class="gard">|</span>
+              <a href="#"><i class="fa-solid fa-person fa-2x"></i></a>
+              <span class="gard">|</span>
+              <a href="#"><i class="fa-solid fa-right-to-bracket fa-2x"></i></a>
+            </div>
+          </div>
+        </div>
+    
+        <div class="nav">
+          <ul class="menu_wrap">
+            <li class="menu1">
+              <a class="menu1_title" href="">국내도서</a>
+              <!-- 숨김상세메뉴-->
+              <ul>
+                <a href="#"><li>소설</li></a>
+                <a href="#"><li>시/에세이</li></a>
+                <a href="#"><li>경영/경제</li></a>
+                <a href="#"><li>자기계발</li></a>
+              </ul>
+            </li>
+            <li class="menu1">
+              <a class="menu1_title" href="">외국도서</a>
+              <!-- 숨김상세메뉴-->
+              <ul>
+                <a href="#"><li>소설</li></a>
+                <a href="#"><li>시/에세이</li></a>
+                <a href="#"><li>경영/경제</li></a>
+                <a href="#"><li>자기계발</li></a>
+              </ul>
+            </li>
+            <li class="menu1">
+              <a class="menu1_title" href="">eBook</a>
+              <!-- 숨김상세메뉴-->
+              <ul>
+                <a href="#"><li>소설</li></a>
+                <a href="#"><li>시/에세이</li></a>
+                <a href="#"><li>경영/경제</li></a>
+                <a href="#"><li>자기계발</li></a>
+              </ul>
+            </li>
+            <li class="menu1">
+              <a class="menu1_title" href="">웹소설</a>
+              <!-- 숨김상세메뉴-->
+              <ul>
+                <a href="#"><li>웹소설</li></a>
+                <a href="#"><li>시/에세이</li></a>
+              </ul>
+            </li>
+            <li class="menu1">
+              <a class="menu1_title" href="">음반</a>
+              <!-- 숨김상세메뉴-->
+              <ul>
+                <a href="#"><li>음반</li></a>
+                <a href="#"><li>DVD</li></a>
+                <a href="#"><li>블루레이</li></a>
+              </ul>
+            </li>
+            <li class="menu1">
+              <a class="menu1_title" href="">중고도서</a>
+              <!-- 숨김상세메뉴-->
+              <ul>
+                <a href="#"><li>중고도서판매</li></a>
+                <a href="#"><li>중고도서구매</li></a>
+              </ul>
+            </li>
+          </ul>
+        </div>
      <!-- 베스트셀러 목록 설정 관련 -->
      <div id="productList">
      <div id="aboutList">
@@ -516,7 +352,55 @@
           </div>          
      </div>
      
+     <hr />
+    <footer>
+      <!--  -->
+      <div class="footer_menu">
+        <div class="footer_menu_area">
+          <ul>
+            <li><a class="a_none" href="">회사소개</a></li>
+            <li><a class="a_none" href="">이용약관</a></li>
+            <li><a href="">개인정보처리방침</a></li>
+            <li><a class="a_none" href="">청소년보호정책</a></li>
+            <li><a class="a_none" href="">고객센터</a></li>
+            <li><a class="a_none" href="">협력사</a></li>
+            <li><a class="a_none" href="">제휴제안</a></li>
+            <li><a class="a_none" href="">광고문의</a></li>
+          </ul>
+        </div>
+      </div>
 
+      <!--  -->
+      <div class="footer_wrap">
+        <div class="footer_info">
+          <div class="footer_logo">에이콘문고</div>
+          <div>
+            <p class="footer_text">
+              ㈜ 에이콘문고 홍대 대표이사 : E조 <br />
+              사업자등록번호 : 123-45-6789 <br />
+              대표전화 : 1234-5678 (발신자 부담전화) 팩스 : 1234-5678-1234
+              (지역번호공통) <br />
+              서울특별시 통신판매업신고번호 : 제 653호 ▶<a href=""
+                >사업자정보확인</a
+              >
+            </p>
+            <p class="footer_text">
+              COPYRIGHT(C) ACRON BOOK CENTRE ALL RIGHTS RESERVED.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer_info">
+          <p class="footer_text">
+            LG U+ 구매안전서비스 ▶ <a href="">서비스 가입 확인</a>
+          </p>
+          <p class="footer_text">
+            고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한
+            LG유플러스의 구매안전서비스를 이용하실 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </footer>
      
 </body>
 </html>
