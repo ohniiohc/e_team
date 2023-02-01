@@ -68,33 +68,37 @@
             let price_3_2=document.querySelector(".price_3_2");
             let price_3_2_1=price_3_2.firstElementChild;
             let tr=document.querySelectorAll("tr");
+            let shipPrice=2000;
             let sum=0;
-            for(let i=0; i<tr.length; i++){
-                let bookPrice=parseInt(tr[i].lastElementChild.previousElementSibling.firstElementChild.firstElementChild.lastElementChild.innerHTML.split(",").join(""));sum+=bookPrice;
-                price_1_2_1.innerHTML=sum.toLocaleString("ko-KR");
-                if(sum<10000){
-                    let shipPrice=2000;
-                    let totalPrice=sum+shipPrice;
-                    price_2_2_2.innerHTML=shipPrice.toLocaleString("ko-KR");
-                    price_3_2_1.innerHTML=totalPrice.toLocaleString("ko-KR");
-                }else{
-                    price_3_2_1.innerHTML=sum.toLocaleString("ko-KR");
+            if(tr.length>0){
+                for(let i=0; i<tr.length; i++){
+                    let bookPrice=parseInt(tr[i].lastElementChild.previousElementSibling.firstElementChild.firstElementChild.lastElementChild.innerHTML.split(",").join(""));sum+=bookPrice;
+                    price_1_2_1.innerHTML=sum.toLocaleString("ko-KR");
+                    if(sum<10000){
+                        let totalPrice=sum+shipPrice;
+                        price_2_2_2.innerHTML=shipPrice.toLocaleString("ko-KR");
+                        price_3_2_1.innerHTML=totalPrice.toLocaleString("ko-KR");
+                    }else{
+                        price_2_2_2.innerHTML="0";
+                        price_3_2_1.innerHTML=sum.toLocaleString("ko-KR");
+                    }
                 }
+            }else{
+                price_1_2_1.innerHTML=sum.toLocaleString("ko-KR");
+                price_2_2_2.innerHTML=shipPrice.toLocaleString("ko-KR");
+                price_3_2_1.innerHTML=shipPrice.toLocaleString("ko-KR");
             }
         }
     </script>
 </head>
 <body>
     <div class="header">
-        <!--로고영역-->
         <div class="logo_area">
             <h1>
-                <a class="logo" href="aa.html">Acorn 에이콘문고</a>
+                <a class="logo" href="main.html">Acorn 에이콘문고</a>
             </h1>
         </div>
-        <!--검색바영역-->
         <div class="search_area">
-            <!--검색바-->
             <div class="input-box">
                 <a href="#"><i class="fa-solid i1 fa-magnifying-glass fa-2x"></i></a>
                 <input type="text" />
@@ -104,69 +108,63 @@
         </div>                
         <div class="servicemenu_area">
             <div class="servicemenu">
-                <a href="#"><i class="fa-solid fa-cart-plus fa-2x"></i></a>
+                <a href="shoppingcart.html"><i class="fa-solid fa-cart-plus fa-2x"></i></a>
                 <span class="gard">|</span>
-                <a href="#"><i class="fa-solid fa-person fa-2x"></i></a>
+                <a href="mypage.html"><i class="fa-solid fa-person fa-2x"></i></a>
                 <span class="gard">|</span>
-                <a href="#"><i class="fa-solid fa-right-to-bracket fa-2x"></i></a>
+                <a href="login.html"><i class="fa-solid fa-right-to-bracket fa-2x"></i></a>
             </div>
         </div>
     </div>
     <div class="nav">
         <ul class="menu_wrap">
             <li class="menu1">
-                <a class="menu1_title" href="">국내도서</a>
-                <!-- 숨김상세메뉴-->
+                <a class="menu1_title" href="booklist.html">국내도서</a>
                 <ul>
-                    <a href="#"><li>소설</li></a>
-                    <a href="#"><li>시/에세이</li></a>
-                    <a href="#"><li>경영/경제</li></a>
-                    <a href="#"><li>자기계발</li></a>
+                    <a href="booklist.html"><li>소설</li></a>
+                    <a href="booklist.html"><li>시/에세이</li></a>
+                    <a href="booklist.html"><li>경영/경제</li></a>
+                    <a href="booklist.html"><li>자기계발</li></a>
                 </ul>
             </li>
             <li class="menu1">
-                <a class="menu1_title" href="">외국도서</a>
-                <!-- 숨김상세메뉴-->
+                <a class="menu1_title" href="booklist.html">외국도서</a>
                 <ul>
-                    <a href="#"><li>소설</li></a>
-                    <a href="#"><li>시/에세이</li></a>
-                    <a href="#"><li>경영/경제</li></a>
-                    <a href="#"><li>자기계발</li></a>
+                    <a href="booklist.html"><li>소설</li></a>
+                    <a href="booklist.html"><li>시/에세이</li></a>
+                    <a href="booklist.html"><li>경영/경제</li></a>
+                    <a href="booklist.html"><li>자기계발</li></a>
                 </ul>
             </li>
             <li class="menu1">
-                <a class="menu1_title" href="">eBook</a>
-                <!-- 숨김상세메뉴-->
+                <a class="menu1_title" href="booklist.html">eBook</a>
                 <ul>
-                    <a href="#"><li>소설</li></a>
-                    <a href="#"><li>시/에세이</li></a>
-                    <a href="#"><li>경영/경제</li></a>
-                    <a href="#"><li>자기계발</li></a>
+                    <a href="booklist.html"><li>소설</li></a>
+                    <a href="booklist.html"><li>시/에세이</li></a>
+                    <a href="booklist.html"><li>경영/경제</li></a>
+                    <a href="booklist.html"><li>자기계발</li></a>
                 </ul>
             </li>
             <li class="menu1">
-                <a class="menu1_title" href="">웹소설</a>
-                <!-- 숨김상세메뉴-->
+                <a class="menu1_title" href="booklist.html">웹소설</a>
                 <ul>
-                    <a href="#"><li>웹소설</li></a>
-                    <a href="#"><li>시/에세이</li></a>
+                    <a href="booklist.html"><li>웹소설</li></a>
+                    <a href="booklist.html"><li>시/에세이</li></a>
                 </ul>
             </li>
             <li class="menu1">
-                <a class="menu1_title" href="">음반</a>
-                <!-- 숨김상세메뉴-->
+                <a class="menu1_title" href="booklist.html">음반</a>
                 <ul>
-                    <a href="#"><li>음반</li></a>
-                    <a href="#"><li>DVD</li></a>
-                    <a href="#"><li>블루레이</li></a>
+                    <a href="booklist.html"><li>음반</li></a>
+                    <a href="booklist.html"><li>DVD</li></a>
+                    <a href="booklist.html"><li>블루레이</li></a>
                 </ul>
             </li>
             <li class="menu1">
-                <a class="menu1_title" href="">중고도서</a>
-                <!-- 숨김상세메뉴-->
+                <a class="menu1_title" href="booklist.html">중고도서</a>
                 <ul>
-                    <a href="#"><li>중고도서판매</li></a>
-                    <a href="#"><li>중고도서구매</li></a>
+                    <a href="booklist.html"><li>중고도서판매</li></a>
+                    <a href="booklist.html"><li>중고도서구매</li></a>
                 </ul>
             </li>
         </ul>
@@ -362,7 +360,6 @@
         </div>
     </main>
     <footer>
-        <!--  -->
         <div class="footer_menu">
             <div class="footer_menu_area">
                 <ul>
@@ -377,8 +374,6 @@
                 </ul>
             </div>
         </div>
-            
-        <!--  -->
         <div class="footer_wrap">
             <div class="footer_info">
                 <div class="footer_logo">에이콘문고</div>
