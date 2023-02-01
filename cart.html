@@ -56,6 +56,7 @@
         }
         .cart tr td:nth-child(3) .price_wrap{
             margin-bottom: 8px;
+            display: flex;
         }
         .cart tr td:nth-child(3) .qty_wrap{
             width: 80px;
@@ -116,17 +117,31 @@
             border-radius: 14px;
         }
         /* ------------------------------------------------------------- */
+        .purchase{
+            width: 270px;
+            padding: 24px;
+        }
+        .purchase ul{
+            border: 1px solid #666;
+        }
+        .purchase ul li{
+            display: flex;
+            justify-content: space-between;
+        }
+        .purchase button{
+            width: 240px;
+        }
     </style>
     <script>
         function minus(minusBtn){
-            let count=document.querySelector("#count");
+            let count=minusBtn.nextElementSibling;
             let countValue=parseInt(count.value);
             countValue--;
             count.value=countValue;
             sum(minusBtn.nextElementSibling);
         }
         function plus(plusBtn){
-            let count=document.querySelector("#count");
+            let count=plusBtn.previousElementSibling;
             let countValue=parseInt(count.value);
             countValue++;
             count.value=countValue;
@@ -139,17 +154,52 @@
                 inputNumber.value=99;
             }
             let price=0;
-            let unitPrice=parseInt(inputNumber.parentElement.parentElement.previousElementSibling.lastElementChild.lastElementChild.lastElementChild.lastElementChild.firstElementChild.nextElementSibling.lastElementChild.innerHTML);
+            let unitPrice=parseInt(inputNumber.parentElement.parentElement.previousElementSibling.lastElementChild.lastElementChild.lastElementChild.lastElementChild.firstElementChild.nextElementSibling.lastElementChild.innerHTML.split(",").join(""));
             let qty=inputNumber.value;
             let multiply=inputNumber.parentElement.previousElementSibling.firstElementChild.lastElementChild;
             price=unitPrice*qty;
-            multiply.innerHTML=price;
+            multiply.innerHTML=price.toLocaleString("ko-KR");
+            calculateTotalPrice();
+        }
+        function del(){
+            let check=document.querySelectorAll("input[type='checkbox']");
+            for(let i=0; i<check.length; i++){
+                if(check[i].checked==true){
+                    let table=check[i].parentElement.parentElement.parentElement;
+                    let tr=check[i].parentElement.parentElement;
+                    table.removeChild(tr);
+                }
+            }
+            calculateTotalPrice();
+        }
+        function calculateTotalPrice(){
+            let price_1_2=document.querySelector(".price_1_2");
+            let price_1_2_1=price_1_2.firstElementChild;
+            let price_2_2=document.querySelector(".price_2_2");
+            let price_2_2_2=price_2_2.firstElementChild.nextElementSibling;
+            let price_3_2=document.querySelector(".price_3_2");
+            let price_3_2_1=price_3_2.firstElementChild;
+            let tr=document.querySelectorAll("tr");
+            let sum=0;
+            for(let i=0; i<tr.length; i++){
+                let bookPrice=parseInt(tr[i].lastElementChild.previousElementSibling.firstElementChild.firstElementChild.lastElementChild.innerHTML.split(",").join(""));sum+=bookPrice;
+                price_1_2_1.innerHTML=sum.toLocaleString("ko-KR");
+                if(sum<10000){
+                    let shipPrice=2000;
+                    let totalPrice=sum+shipPrice;
+                    price_2_2_2.innerHTML=shipPrice.toLocaleString("ko-KR");
+                    price_3_2_1.innerHTML=totalPrice.toLocaleString("ko-KR");
+                }else{
+                    price_3_2_1.innerHTML=sum.toLocaleString("ko-KR");
+                }
+            }
         }
     </script>
 </head>
 <body>
     <main>
         <div class="main_container">
+            <button onclick="del()">삭제</button>
             <div class="cart_wrap">
                 <table class="cart">
                     <tr>
@@ -167,7 +217,7 @@
                                         <span class="bw_2_2_1">
                                             <span class="bw_2_2_1_1">10%</span>
                                             <span class="bw_2_2_1_2">
-                                               <b>13500</b>
+                                               <b>13,500</b>
                                             </span>
                                             <span class="bw_2_2_1_3">원</span>
                                             <span class="bw_2_2_1_4">(750P)</span>
@@ -179,13 +229,13 @@
                         <td>
                             <div class="price_wrap">
                                 <span>
-                                    <b>13500</b>
+                                    <b>13,500</b>
                                 </span>
                                 <span>원</span>
                             </div>
                             <div class="qty_wrap">
                                 <button onclick="minus(this)"></button>
-                                <input type="number" value="1" id="count" onkeyup="sum(this)">
+                                <input type="number" value="1" onkeyup="sum(this)">
                                 <button onclick="plus(this)"></button>
                             </div>
                         </td>
@@ -218,7 +268,7 @@
                                         <span class="bw_2_2_1">
                                             <span class="bw_2_2_1_1">10%</span>
                                             <span class="bw_2_2_1_2">
-                                               <b>13320</b>
+                                               <b>13,320</b>
                                             </span>
                                             <span class="bw_2_2_1_3">원</span>
                                             <span class="bw_2_2_1_4">(740P)</span>
@@ -230,7 +280,7 @@
                         <td>
                             <div class="price_wrap">
                                 <span>
-                                    <b>13320</b>
+                                    <b>13,320</b>
                                 </span>
                                 <span>원</span>
                             </div>
@@ -269,7 +319,7 @@
                                         <span class="bw_2_2_1">
                                             <span class="bw_2_2_1_1">10%</span>
                                             <span class="bw_2_2_1_2">
-                                               <b>9000</b>
+                                               <b>9,000</b>
                                             </span>
                                             <span class="bw_2_2_1_3">원</span>
                                             <span class="bw_2_2_1_4">(500P)</span>
@@ -281,7 +331,7 @@
                         <td>
                             <div class="price_wrap">
                                 <span>
-                                    <b>9000</b>
+                                    <b>9,000</b>
                                 </span>
                                 <span>원</span>
                             </div>
@@ -307,12 +357,33 @@
                     </tr>
                 </table>
             </div>
-            <div class="">
+            <div class="purchase">
                 <ul>
-                    <li>하하</li>
-                    <li>호호</li>
-                    <li>히히히</li>
+                    <li>
+                        <div class="price_1_1">상품금액</div>
+                        <div class="price_1_2">
+                            <span>35,820</span>
+                            <span>원</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="price_2_1">배송비</div>
+                        <div class="price_2_2">
+                            <span>+</span>
+                            <span>0</span>
+                            <span>원</span>
+                        </div>
+                    </li>
+                    <hr>
+                    <li>
+                        <div class="price_3_1">결제 예정 금액</div>
+                        <div class="price_3_2">
+                            <span>35,820</span>
+                            <span>원</span>
+                        </div>
+                    </li>
                 </ul>
+                <button>주문하기</button>
             </div>
         </div>
     </main>
