@@ -2,7 +2,9 @@
 @import "header.css";
 @import "nav.css";
 @import "footer.css";
-@import "homemain.css";
 @import "detail.css";
-@import "mypage.css";
-@import "booklist.css"
+/* @import "mypage.css"; */
+@import "booklist.css";
+@import "maincontainer.css";
+@import "homemain.css";
+@import "shoppingcart.css";

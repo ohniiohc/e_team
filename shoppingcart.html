@@ -1,137 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .main_container *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            /* border: 1px solid black; */
-        }
-        .cart tr td{
-            height: 195px;
-        }
-        /* ------------------------------------------------------------- */
-        .cart tr td:nth-child(1){
-            width: 42px;
-            padding: 24px 10px;
-        }
-        /* ------------------------------------------------------------- */
-        .cart tr td:nth-child(2){
-            width: 486px;
-            padding: 24px 24px 24px 0;
-        }
-        .cart tr td:nth-child(2) .book_wrap{
-            display: flex;
-            font-size: 14px;
-        }
-        .cart tr td:nth-child(2) .bw_1{
-            width: 82px;
-        }
-        .cart tr td:nth-child(2) .bw_2{
-            margin-left: 12px;
-        }
-        .cart tr td:nth-child(2) .bw_2_1{
-            margin-bottom: 18px;
-        }
-        .cart tr td:nth-child(2) .bw_2_2_1_1{
-            color: #4dac27;
-        }
-        .cart tr td:nth-child(2) .bw_2_2_1_4{
-            color: #666;
-            font-size: 12px;
-        }
-        /* ------------------------------------------------------------- */
-        .cart tr td:nth-child(3){
-            width: 140px;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .cart tr td:nth-child(3) .price_wrap{
-            margin-bottom: 8px;
-            display: flex;
-        }
-        .cart tr td:nth-child(3) .qty_wrap{
-            width: 80px;
-            height: 30px;
-            border: 1px solid #666;
-            border-radius: 6px;
-            display: flex;
-            justify-content: space-around;
-        }
-        .cart tr td:nth-child(3) .qty_wrap button{
-            width: 27px;
-            border: none;
-        }
-        .cart tr td:nth-child(3) .qty_wrap input{
-            width: 28px;
-            font-size: 14px;
-            text-align: center;
-            border: none;
-            outline: none;
-        }
-        .cart tr td:nth-child(3) .qty_wrap button:nth-child(1){
-            background: url(media/Minus.png) center no-repeat;
-            background-size: 10px;
-        }
-        .cart tr td:nth-child(3) .qty_wrap button:nth-child(3){
-            background: url(media/Plus.png) center no-repeat;
-            background-size: 10px;
-        }
-        .cart tr td:nth-child(3) .qty_wrap input::-webkit-outer-spin-button, input::-webkit-inner-spin-button{
-            -webkit-appearance: none;
-        }
-        .cart tr td:nth-child(3) .qty_wrap input[type=number]{
-            -moz-appearance: textfield;
-        }
-        /* ------------------------------------------------------------- */
-        .cart tr td:nth-child(4){
-            width: 222px;
-            padding: 24px;
-            font-size: 12px;
-        }
-        .cart tr td:nth-child(4) hr{
-            border: 1px dashed #bbb;
-            margin: 12px 0;
-        }
-        .cart tr td:nth-child(4) p{
-            margin-top: 6px;
-        }
-        .cart tr td:nth-child(4) .ship_wrap span{
-            color: #fff;
-            padding: 2px 4px;
-            background-color: #5055b1;
-            border-radius: 14px;
-        }
-        .cart tr td:nth-child(4) .visit_wrap span{
-            color: #5055b1;
-            padding: 2px 4px;
-            border: 1px solid #5055b1;
-            border-radius: 14px;
-        }
-        /* ------------------------------------------------------------- */
-        .purchase{
-            width: 270px;
-            padding: 24px;
-        }
-        .purchase ul{
-            border: 1px solid #666;
-        }
-        .purchase ul li{
-            display: flex;
-            justify-content: space-between;
-        }
-        .purchase button{
-            width: 240px;
-        }
-    </style>
     <script>
         function minus(minusBtn){
             let count=minusBtn.nextElementSibling;
@@ -197,11 +85,97 @@
     </script>
 </head>
 <body>
+    <div class="header">
+        <!--로고영역-->
+        <div class="logo_area">
+            <h1>
+                <a class="logo" href="aa.html">Acorn 에이콘문고</a>
+            </h1>
+        </div>
+        <!--검색바영역-->
+        <div class="search_area">
+            <!--검색바-->
+            <div class="input-box">
+                <a href="#"><i class="fa-solid i1 fa-magnifying-glass fa-2x"></i></a>
+                <input type="text" />
+                <a href="#"><i class="fa-solid fa-keyboard fa-2x"></i></a>
+                <a href="#"><i class="fa-solid fa-microphone fa-2x"></i></a>
+            </div>
+        </div>                
+        <div class="servicemenu_area">
+            <div class="servicemenu">
+                <a href="#"><i class="fa-solid fa-cart-plus fa-2x"></i></a>
+                <span class="gard">|</span>
+                <a href="#"><i class="fa-solid fa-person fa-2x"></i></a>
+                <span class="gard">|</span>
+                <a href="#"><i class="fa-solid fa-right-to-bracket fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <ul class="menu_wrap">
+            <li class="menu1">
+                <a class="menu1_title" href="">국내도서</a>
+                <!-- 숨김상세메뉴-->
+                <ul>
+                    <a href="#"><li>소설</li></a>
+                    <a href="#"><li>시/에세이</li></a>
+                    <a href="#"><li>경영/경제</li></a>
+                    <a href="#"><li>자기계발</li></a>
+                </ul>
+            </li>
+            <li class="menu1">
+                <a class="menu1_title" href="">외국도서</a>
+                <!-- 숨김상세메뉴-->
+                <ul>
+                    <a href="#"><li>소설</li></a>
+                    <a href="#"><li>시/에세이</li></a>
+                    <a href="#"><li>경영/경제</li></a>
+                    <a href="#"><li>자기계발</li></a>
+                </ul>
+            </li>
+            <li class="menu1">
+                <a class="menu1_title" href="">eBook</a>
+                <!-- 숨김상세메뉴-->
+                <ul>
+                    <a href="#"><li>소설</li></a>
+                    <a href="#"><li>시/에세이</li></a>
+                    <a href="#"><li>경영/경제</li></a>
+                    <a href="#"><li>자기계발</li></a>
+                </ul>
+            </li>
+            <li class="menu1">
+                <a class="menu1_title" href="">웹소설</a>
+                <!-- 숨김상세메뉴-->
+                <ul>
+                    <a href="#"><li>웹소설</li></a>
+                    <a href="#"><li>시/에세이</li></a>
+                </ul>
+            </li>
+            <li class="menu1">
+                <a class="menu1_title" href="">음반</a>
+                <!-- 숨김상세메뉴-->
+                <ul>
+                    <a href="#"><li>음반</li></a>
+                    <a href="#"><li>DVD</li></a>
+                    <a href="#"><li>블루레이</li></a>
+                </ul>
+            </li>
+            <li class="menu1">
+                <a class="menu1_title" href="">중고도서</a>
+                <!-- 숨김상세메뉴-->
+                <ul>
+                    <a href="#"><li>중고도서판매</li></a>
+                    <a href="#"><li>중고도서구매</li></a>
+                </ul>
+            </li>
+        </ul>
+    </div>
     <main>
-        <div class="main_container">
-            <button onclick="del()">삭제</button>
-            <div class="cart_wrap">
-                <table class="cart">
+        <div class="main_container shoppingcart_main_container">
+            <div class="shoppingcart_wrap">
+                <button onclick="del()" class="del_btn">항목 삭제</button>
+                <table class="shoppingcart">
                     <tr>
                         <td>
                             <input type="checkbox">
@@ -383,9 +357,55 @@
                         </div>
                     </li>
                 </ul>
-                <button>주문하기</button>
+                <button><b>주문하기</b></button>
             </div>
         </div>
     </main>
+    <footer>
+        <!--  -->
+        <div class="footer_menu">
+            <div class="footer_menu_area">
+                <ul>
+                    <li><a class="a_none" href="">회사소개</a></li>
+                    <li><a class="a_none" href="">이용약관</a></li>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a class="a_none" href="">청소년보호정책</a></li>
+                    <li><a class="a_none" href="">고객센터</a></li>
+                    <li><a class="a_none" href="">협력사</a></li>
+                    <li><a class="a_none" href="">제휴제안</a></li>
+                    <li><a class="a_none" href="">광고문의</a></li>
+                </ul>
+            </div>
+        </div>
+            
+        <!--  -->
+        <div class="footer_wrap">
+            <div class="footer_info">
+                <div class="footer_logo">에이콘문고</div>
+                    <div>
+                        <p class="footer_text">
+                            ㈜ 에이콘문고 홍대 대표이사 : E조 <br />
+                            사업자등록번호 : 123-45-6789 <br />
+                            대표전화 : 1234-5678 (발신자 부담전화) 팩스 : 1234-5678-1234
+                            (지역번호공통) <br />
+                            서울특별시 통신판매업신고번호 : 제 653호 ▶<a href="">사업자정보확인</a>
+                        </p>
+                        <p class="footer_text">
+                            COPYRIGHT(C) ACRON BOOK CENTRE ALL RIGHTS RESERVED.
+                        </p>
+                    </div>
+                </div>
+                <div class="footer_info">
+                    <p class="footer_text">
+                        LG U+ 구매안전서비스 ▶ <a href="">서비스 가입 확인</a>
+                    </p>
+                    <p class="footer_text">
+                        고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한
+                        LG유플러스의 구매안전서비스를 이용하실 수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
