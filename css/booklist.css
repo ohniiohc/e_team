@@ -1,0 +1,260 @@
+#productList{
+    margin: 50px;
+}
+#aboutList h1{
+    margin: 20px;
+}
+#aboutList p{
+    margin: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(85, 84, 84);
+}
+#bookCtg{
+    margin: 20px; /* 스크롤바 애니메이션을 넣고 싶었으나...도르륵..ㅜ */
+}
+#bookCtg a{
+    text-decoration: none;
+    font-size: 17px;
+    color: rgb(85, 84, 84);
+}
+#bookCtg button{
+    display: inline-block;
+    margin: 3px;
+    padding: 10px 20px;
+    background-color: rgba(235, 235, 235, 0.577);
+    border-radius: 50px;
+    border: none;
+}
+#bookCtg button:hover{
+    background-color: rgba(184, 184, 184, 0.577);
+    transition: 0.35s;
+}
+#setDate, #setList{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 20px;
+    font-size: 25px;
+    font-weight: 800;
+    background-color: rgb(247, 203, 43);
+}
+#setDate div{
+    display: inline-block;
+}
+#setDate select{
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0 20px;
+}
+#setList div{
+    display: inline-block;
+}
+#setList a{
+    text-decoration: none;
+    color: rgb(85, 84, 84);
+}
+.bookInfo_wrap{
+    /* background-color: lavender; */
+    margin: 0 auto;
+    width: 1500px;
+    height: 330px;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+}
+.bookInfo{
+    /* background-color: gold; */
+    margin: 7px auto;
+    display: flex;
+    width: 1300px;
+    height: 280px;
+    align-items: center;
+    margin-top: 20px;
+    padding-left: 35px;
+}
+.bookInfo div{
+    margin: 5px;
+/*                height: 265px; */
+}
+.bookInfo .img{
+    width: 200px;
+    height: 240px;
+    margin-right: 40px;
+    /* background-color: red; */
+}
+.img img{
+    width: 200px;
+    height: 240px;
+}
+.img img:hover{
+    transition: 0.35s;
+    transform: scale(1.05);
+}
+.listNum{ 
+    width: 60px;
+    height: 17px;
+    padding: 3px;
+    border: none;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: rgb(47, 160, 29);
+    color: whitesmoke;
+    text-align: center;
+    font-weight: 800;
+    font-size: 14px;
+    text-align: center;
+}
+.badge{
+    display: flex;
+    justify-content:left;
+}
+.badge div{
+    display: inline-block;
+    font-size: 13px;
+    height: 13px;
+    padding: 3px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: rgb(96, 96, 96);
+    border: 0.5px solid rgb(96, 96, 96);
+}
+.badge .badge_md{
+    color: midnightblue;
+    border: 0.5px solid midnightblue;
+}
+.bookTitle{
+    font-size: 20px;
+    font-weight: 700;
+}
+.bookTitle:hover{
+    text-decoration: underline;
+    transition: 0.2s;
+}
+.bookPub{
+    font-size: 16px;
+    color: rgb(96, 96, 96);
+    padding-bottom: 10px;
+}
+.bookPrice{
+    color: black;
+    font-weight: 800;
+    font-size: 17px;
+    padding-bottom: 10px;
+}
+.greenAcc{
+    color: rgb(47, 160, 29);
+    font-weight: 800;
+    margin-right: 3px;
+}
+.originPrice{
+    text-decoration: line-through;
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: 450;
+    color: rgb(96, 96, 96);
+}
+.bookPage{
+    font-size: 15px;
+    margin-left: 5px;
+    padding-right: 6px;
+    font-weight: 500;
+    color: rgb(96, 96, 96);
+}
+.about{
+    text-align: left;
+    display: block;
+    white-space: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: rgb(96, 96, 96);
+}
+.review{
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+    padding-bottom: 10px;
+}
+.gray{
+    color: rgb(96, 96, 96);
+    font-weight: 400;
+    font-size: 15px;
+}
+.review_sum{
+    color: midnightblue;
+    font-size: 17px;
+}
+.bookInfo .info{
+    width: 600px;
+}
+.bookInfo .shipping{
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.shipping_sum{
+    width: 80px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(157, 157, 228, 0.321);
+    color: midnightblue;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 15px;
+    padding-top: 4px;
+}
+.shipping_spec{
+    padding-top: 5px;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+.bold{
+    font-weight: bold;
+}
+.bookInfo .buy{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+}
+.buy a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 17px;
+    font-weight: 600;
+}          
+.cart{
+    background-color: rgb(123, 122, 122);
+    width: 150px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.buyNow{
+    background-color: rgb(77, 77, 173);
+    width: 150px;
+    height: 50px;
+    display: block;
+    border-radius: 10px;
+    border: none;
+}
+.cart:hover{
+    background-color: rgb(91, 91, 91);
+    transition: 0.35s;
+}
+.buyNow:hover{
+    background-color: rgb(36, 36, 140);
+    transition: 0.35s;
+}

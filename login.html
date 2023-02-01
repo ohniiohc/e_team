@@ -127,12 +127,18 @@
             background-color: rgb(225, 244, 243);
             margin-top: 15px;
         }
+
+        .acon {
+            text-decoration: none;
+            color:black;
+        }
+
     </style>
 </head>
 <body>
     <form name="login">
     <div id="wrap">
-        <h1>에이콘서점 🐿</h1>
+        <a class="acon" href="main.html"><h1>에이콘서점 🐿</h1></a>
         
         <div id="login">
             <input type="text" name="uid" class="login_id" placeholder="아이디를 입력해 주세요.">
@@ -159,7 +165,7 @@
             상태를 꼭 확인해 주세요.
         </p>
 
-        <button class="joinus"><a href="register.html" >회원가입</a></button> <!-- 회원가입 화면으로 토스 -->
+       <button onclick="window.open('register.html')" class="joinus">회원가입</button> <<!-- 회원가입 화면으로 토스 -->
 
         <hr>
 
