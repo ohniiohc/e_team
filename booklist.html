@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>베스트셀러</title>
+     <style>
+          *{
+               margin: 0;
+               padding: 0;
+          }
+          /* div{
+               border: 1px solid lightgray;
+          } */
+          #productList{
+               margin: 50px;
+          }
+          #aboutList h1{
+               margin: 20px;
+          }
+          #aboutList p{
+               margin: 20px;
+               font-size: 18px;
+               font-weight: 500;
+               color: rgb(85, 84, 84);
+          }
+          #bookCtg{
+               margin: 20px; /* 스크롤바 애니메이션을 넣고 싶었으나...도르륵..ㅜ */
+          }
+          #bookCtg a{
+               text-decoration: none;
+               font-size: 17px;
+               color: rgb(85, 84, 84);
+          }
+          #bookCtg button{
+               display: inline-block;
+               margin: 3px;
+               padding: 10px 20px;
+               background-color: rgba(235, 235, 235, 0.577);
+               border-radius: 50px;
+               border: none;
+          }
+          #bookCtg button:hover{
+               background-color: rgba(184, 184, 184, 0.577);
+               transition: 0.35s;
+          }
+          #setDate, #setList{
+               display: flex;
+               justify-content: space-between;
+               padding: 10px;
+               margin: 20px;
+               font-size: 25px;
+               font-weight: 800;
+               background-color: rgb(247, 203, 43);
+          }
+          #setDate div{
+               display: inline-block;
+          }
+          #setDate select{
+               font-size: 18px;
+               border-radius: 10px;
+               padding: 5px;
+               margin: 0 20px;
+          }
+          #setList div{
+               display: inline-block;
+          }
+          #setList a{
+               text-decoration: none;
+               color: rgb(85, 84, 84);
+          }
+          .bookInfo_wrap{
+               /* background-color: lavender; */
+               margin: 0 auto;
+               width: 1500px;
+               height: 330px;
+               border-bottom: 1px solid gray;
+               border-top: 1px solid gray;
+          }
+          .bookInfo{
+               /* background-color: gold; */
+               margin: 7px auto;
+               display: flex;
+               width: 1300px;
+               height: 280px;
+               align-items: center;
+               margin-top: 20px;
+               padding-left: 35px;
+          }
+          .bookInfo div{
+               margin: 5px;
+/*                height: 265px; */
+          }
+          .bookInfo .img{
+               width: 200px;
+               height: 240px;
+               margin-right: 40px;
+               /* background-color: red; */
+          }
+          .img img{
+               width: 200px;
+               height: 240px;
+          }
+          .img img:hover{
+               transition: 0.35s;
+               transform: scale(1.05);
+          }
+          .listNum{ 
+               width: 60px;
+               height: 17px;
+               padding: 3px;
+               border: none;
+               border-bottom-right-radius: 10px;
+               border-top-left-radius: 10px;
+               background-color: rgb(47, 160, 29);
+               color: whitesmoke;
+               text-align: center;
+               font-weight: 800;
+               font-size: 14px;
+               text-align: center;
+          }
+          .badge{
+               display: flex;
+               justify-content:left;
+          }
+          .badge div{
+               display: inline-block;
+               font-size: 13px;
+               height: 13px;
+               padding: 3px;
+               border-radius: 4px;
+               font-weight: 500;
+               color: rgb(96, 96, 96);
+               border: 0.5px solid rgb(96, 96, 96);
+          }
+          .badge .badge_md{
+               color: midnightblue;
+               border: 0.5px solid midnightblue;
+          }
+          .bookTitle{
+               font-size: 20px;
+               font-weight: 700;
+          }
+          .bookTitle:hover{
+               text-decoration: underline;
+               transition: 0.2s;
+          }
+          .bookPub{
+               font-size: 16px;
+               color: rgb(96, 96, 96);
+               padding-bottom: 10px;
+          }
+          .bookPrice{
+               color: black;
+               font-weight: 800;
+               font-size: 17px;
+               padding-bottom: 10px;
+          }
+          .greenAcc{
+               color: rgb(47, 160, 29);
+               font-weight: 800;
+               margin-right: 3px;
+          }
+          .originPrice{
+               text-decoration: line-through;
+               font-size: 15px;
+               margin-left: 5px;
+               font-weight: 450;
+               color: rgb(96, 96, 96);
+          }
+          .bookPage{
+               font-size: 15px;
+               margin-left: 5px;
+               padding-right: 6px;
+               font-weight: 500;
+               color: rgb(96, 96, 96);
+          }
+          .about{
+               text-align: left;
+               display: block;
+               white-space: break-word;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               line-height: 1.2;
+               display: -webkit-box;
+               -webkit-line-clamp: 2;
+               -webkit-box-orient: vertical;
+               color: rgb(96, 96, 96);
+          }
+          .review{
+               font-size: 16px;
+               font-weight: 700;
+               color: black;
+               padding-bottom: 10px;
+          }
+          .gray{
+               color: rgb(96, 96, 96);
+               font-weight: 400;
+               font-size: 15px;
+          }
+          .review_sum{
+               color: midnightblue;
+               font-size: 17px;
+          }
+          .bookInfo .info{
+               width: 600px;
+          }
+          .bookInfo .shipping{
+               width: 200px;
+               text-align: center;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+          }
+          .shipping_sum{
+               width: 80px;
+               height: 20px;
+               border-radius: 10px;
+               border: none;
+               background-color: rgba(157, 157, 228, 0.321);
+               color: midnightblue;
+               font-weight: 500;
+               letter-spacing: 0.5px;
+               font-size: 15px;
+               padding-top: 4px;
+          }
+          .shipping_spec{
+               padding-top: 5px;
+               font-size: 17px;
+               letter-spacing: 0.5px;
+               line-height: 1.3;
+          }
+          .bold{
+               font-weight: bold;
+          }
+          .bookInfo .buy{
+               width: 200px;
+               display: flex;
+               flex-direction: column;
+               flex-wrap: wrap;
+               text-align: center;
+               align-items: center;
+          }
+          .buy a{
+               text-decoration: none;
+               color: whitesmoke;
+               font-size: 17px;
+               font-weight: 600;
+          }          
+          .cart{
+               background-color: rgb(123, 122, 122);
+               width: 150px;
+               height: 50px;
+               display: block;
+               margin-bottom: 10px;
+               border-radius: 10px;
+               border: none;
+          }
+          .buyNow{
+               background-color: rgb(77, 77, 173);
+               width: 150px;
+               height: 50px;
+               display: block;
+               border-radius: 10px;
+               border: none;
+          }
+          .cart:hover{
+               background-color: rgb(91, 91, 91);
+               transition: 0.35s;
+          }
+          .buyNow:hover{
+               background-color: rgb(36, 36, 140);
+               transition: 0.35s;
+          }
+
+     </style>
+</head>
+<body>
+     <!-- 베스트셀러 목록 설정 관련 -->
+     <div id="productList">
+     <div id="aboutList">
+          <h1>종합 연간 베스트</h1>
+          <p>오프라인+온라인에서 판매되는 도서와 eBook의 1년간 가장 많이 판매된 순위입니다.</p>
+          <div id="bookCtg">
+                    <button><a href="#">종합</a></button>
+                    <button><a href="#">소설</a></button>
+                    <button><a href="#">에세이</a></button>
+                    <button><a href="#">한국소설</a></button>
+                    <button><a href="#">외국소설</a></button>
+                    <button><a href="#">시</a></button>
+                    <button><a href="#">아동</a></button>
+                    <button><a href="#">가정생활</a></button>
+                    <button><a href="#">인문</a></button>
+                    <button><a href="#">정치사회</a></button>
+                    <button><a href="#">경제경영</a></button>
+                    <button><a href="#">건강</a></button>
+                    <button><a href="#">과학</a></button>
+                    <button><a href="#">외국어</a></button>
+                    <button><a href="#">예술</a></button>
+                    <button><a href="#">취미/스포츠</a></button>
+                    <button><a href="#">TOEIC/TOEFL</a></button>
+                    <button><a href="#">유아</a></button>
+                    <button><a href="#">종교</a></button>
+                    <button><a href="#">아동만화</a></button>
+                    <button><a href="#">요리</a></button>
+                    <button><a href="#">역사/문화</a></button>
+                    <button><a href="#">자기계발</a></button>
+                    <button><a href="#">여행</a></button>
+                    <button><a href="#">기술/컴퓨터</a></button>
+                    <button><a href="#">만화</a></button>
+                    <button><a href="#">청소년</a></button>
+                    <button><a href="#">서양도서</a></button>
+                    <button><a href="#">일본도서</a></button>
+          </div>
+          <div id="setDate">
+               <div>2022년</div>
+               <div id="setDateOpt">
+                    <div class="boxing1">
+                         <select name="setDate">
+                              <option value="jan">2022년 1월</option>
+                              <option value="feb">2022년 2월</option>
+                              <option value="mar">2022년 3월</option>
+                              <option value="apr">2022년 4월</option>
+                              <option value="may">2022년 5월</option>
+                              <option value="jun">2022년 6월</option>
+                              <option value="jul">2022년 7월</option>
+                              <option value="aug">2022년 8월</option>
+                              <option value="sep">2022년 9월</option>
+                              <option value="oct">2022년 10월</option>
+                              <option value="nov">2022년 11월</option>
+                              <option value="dec">2022년 12월</option>
+                         </select>
+                    </div>
+                    <div>
+                         <select name="listLength" id="listLength">
+                              <option value="20">20개씩 보기</option>
+                              <option value="50">50개씩 보기</option>
+                         </select>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <!-- 베스트셀러 목록 1 -->
+     <div class="bookInfo_wrap">
+          <div class="bookInfo">
+               <div class="img"><img src="./image/booklist1.jpeg"></div>
+               <div class="info">
+                    <div class="listNum">Best1</div>
+                    <div class="badge">
+                         <div class="badge_md">MD의 선택</div>
+                         <div class="badge_event">이벤트</div>
+                         <div class="badge_gift">사은품</div>
+                         <div class="badge_incDdc">소득공제</div>
+                    </div>
+                    <div class="bookTitle">불편한 편의점(40만부 기념 벚꽃 에디션)</div>
+                    <div class="bookPub">김호연 · 나무옆의자 · 2021.04.20</div>
+                    <div class="bookPrice"><span class="greenAcc">10%</span> 12,600원<span class="originPrice">14,000원</span><span class="bookPage"> | 700p</span></div>
+                    <div class="about">누적 판매 40만부 돌파, 2022년 가장 사랑받는 소설
+                         ★★★전 서점 종합베스트 1위, 2021 올해의 책,
+                         ★★★국립중앙도서관 사서추천도서, 해외 6개국 판권 수출
+                         
+                         김호연 작가의 장편소설 『불편한 편의점』이 누적 판매 40만부 돌파를 기념하여 벚꽃 에디션으로 새 단장 했습니다. 2021년 4월에 출간되어 전 연령층의 폭넓은 공감을 얻으며 소설 읽기 바람을 일으킨 『불편한 편의점』의 열기는 지금도 현재진행형입니다. “읽는 내내 마음이 따뜻하고 먹먹했다” “눈가에 미소와 눈물이 떠나지 않았다” “시간 가는 줄 모르고 몰입해서 읽었다” “작은 친절과 소통의 소중함을 일깨워준 책” “힘든 시기를 버티게 해준 책” 등의 독자 리뷰 하나하나가 책이 가진 힘을 말해줍니다. 청파동 골목 모퉁이의 작은 가게, 서울역 노숙인이었던 정체불명의 야간 알바가 지키는 곳, 불편한데 자꾸 가고 싶은 봄날의 편의점으로 여러분을 초대합니다.</div>
+                    <div class="review">
+                         <div class="rate">
+                              <img src="./image/clover.png" width="15px"> 9.78 <span class="gray">(2,435개의 리뷰) / </span>
+                              <img src="./image/left-quote.svg" width="15px"><span class="review_sum"> 최고예요</span>
+                         </div>
+                    </div>     
+               </div>
+               <div class="shipping">
+                    <div class="shipping_sum">당일배송</div>
+                    <div class="shipping_spec">지금 주문하면<br><span class="bold">오늘(2/2,목)</span><br>도착예정</span></div>
+               </div>
+               <div class="buy">
+                    <button class="cart"><a href="#">장바구니</a></button>
+                    <button class="buyNow"><a href="#">바로구매</a></button>
+               </div>
+          </div>          
+     </div>
+
+          <!-- 베스트셀러 목록 2 -->
+          <div class="bookInfo_wrap">
+               <div class="bookInfo">
+                    <div class="img"><img src="./image/booklist2.jpeg"></div>
+                    <div class="info">
+                         <div class="listNum">Best2</div>
+                         <div class="badge">
+                              <div class="badge_md">MD의 선택</div>
+                              <div class="badge_md">오늘의 선택</div>
+                              <div class="badge_incDdc">소득공제</div>
+                         </div>
+                         <div class="bookTitle">역행자</div>
+                         <div class="bookPub">자청 · 웅진지식하우스 · 2022.06.03</div>
+                         <div class="bookPrice"><span class="greenAcc">10%</span> 15,750원<span class="originPrice">17,500원</span><span class="bookPage"> | 870p</span></div>
+                         <div class="about">대부분의 사람들은 유전자와 본성의 명령을 그대로 따르기 때문에 평범함을 벗어날 수 없다. 하지만 정작 자신은 이를 모른 채 ‘나는 달라’ 하는 자의식에 사로잡혀서 무한 합리화에 빠져 살아간다. 스스로가 얼마나 많은 정신적, 심리적 오류를 저지르는지 알지 못한 채 매일 똑같은 쳇바퀴를 돌 뿐이다. 왜 우리는 진짜 자유를 얻지 못하는가? 왜 늘 돈 이야기를 하면서도 평생 돈에 허덕이는가?</div>
+                         <div class="review">
+                              <div class="rate">
+                                   <img src="./image/clover.png" width="15px"> 9.38 <span class="gray">(842개의 리뷰) / </span>
+                                   <img src="./image/left-quote.svg" width="15px"><span class="review_sum"> 집중돼요</span>
+                              </div>
+                         </div>     
+                    </div>
+                    <div class="shipping">
+                         <div class="shipping_sum">당일배송</div>
+                         <div class="shipping_spec">지금 주문하면<br><span class="bold">오늘(2/2,목)</span><br>도착예정</span></div>
+                    </div>
+                    <div class="buy">
+                         <button class="cart"><a href="#">장바구니</a></button>
+                         <button class="buyNow"><a href="#">바로구매</a></button>
+                    </div>
+               </div>          
+          </div>
+
+                   <!-- 베스트셀러 목록 3 -->
+                   <div class="bookInfo_wrap">
+                    <div class="bookInfo">
+                         <div class="img"><img src="./image/booklist3.jpeg"></div>
+                         <div class="info">
+                              <div class="listNum">Best3</div>
+                              <div class="badge">
+                                   <div class="badge_md">오늘의 선택</div>
+                                   <div class="badge_md">MD의 선택</div>
+                                   <div class="badge_event">이벤트</div>
+                                   <div class="badge_gift">사은품</div>
+                                   <div class="badge_incDdc">소득공제</div>
+                              </div>
+                              <div class="bookTitle">하얼빈</div>
+                              <div class="bookPub">김훈 · 문학동네 · 2022.08.03</div>
+                              <div class="bookPrice"><span class="greenAcc">10%</span> 14,400원<span class="originPrice">16,000원</span><span class="bookPage"> | 800p</span></div>
+                              <div class="about">‘우리 시대 최고의 문장가’ ‘작가들의 작가’로 일컬어지는 소설가 김훈의 신작 장편소설 『하얼빈』이 출간되었다. 『하얼빈』은 김훈이 작가로 활동하는 내내 인생 과업으로 삼아왔던 특별한 작품이다. 작가는 청년 시절부터 안중근의 짧고 강렬했던 생애를 소설로 쓰려는 구상을 품고 있었고, 안중근의 움직임이 뿜어내는 에너지를 글로 감당하기 위해 오랜 시간을 들여 ‘인간 안중근’을 깊이 이해해나갔다. 그리고 2022년 여름, 치열하고 절박한 집필 끝에 드디어 그 결과물을 세상에 내놓게 되었다.</div>
+                              <div class="review">
+                                   <div class="rate">
+                                        <img src="./image/clover.png" width="15px"> 9.73 <span class="gray">(910개의 리뷰) / </span>
+                                        <img src="./image/left-quote.svg" width="15px"><span class="review_sum"> 고마워요</span>
+                                   </div>
+                              </div>     
+                         </div>
+                         <div class="shipping">
+                              <div class="shipping_sum">당일배송</div>
+                              <div class="shipping_spec">지금 주문하면<br><span class="bold">오늘(2/2,목)</span><br>도착예정</span></div>
+                         </div>
+                         <div class="buy">
+                              <button class="cart"><a href="#">장바구니</a></button>
+                              <button class="buyNow"><a href="#">바로구매</a></button>
+                         </div>
+                    </div>          
+               </div>
+
+                        <!-- 베스트셀러 목록 4 -->
+                        <div class="bookInfo_wrap">
+                         <div class="bookInfo">
+                              <div class="img"><img src="./image/booklist4.jpeg"></div>
+                              <div class="info">
+                                   <div class="listNum">Best4</div>
+                                   <div class="badge">
+                                        <div class="badge_incDdc">소득공제</div>
+                                   </div>
+                                   <div class="bookTitle">그리움은 아무에게나 생기지 않습니다</div>
+                                   <div class="bookPub">박근혜 · 가로세로연구소 · 2021.12.30</div>
+                                   <div class="bookPrice"><span class="greenAcc">10%</span> 13,500원<span class="originPrice">15,000원</span><span class="bookPage"> | 750p</span></div>
+                                   <div class="about">서울 구치소에서의 생활이 어느덧 4년 9개월로 접어들고 있습니다.
+
+                                        돌아보면, 대통령으로서의 저의 시간은 언제나 긴장의 연속이었습니다. 오늘은 언제, 어디에서, 누구를 만나고, 어떤 주제로 이야기를 해야 하는지, 늘 시간을 쪼개서 일을 하면서 참으로 숨 가쁘게 지냈습니다. 국민에게 조금이라도 나은 삶을 드리기 위해 시간이 어떻게 흘러가는 지도 모르게 노력했습니다.</div>
+                                   <div class="review">
+                                        <div class="rate">
+                                             <img src="./image/clover.png" width="15px"> 9.04 <span class="gray">(591개의 리뷰) / </span>
+                                             <img src="./image/left-quote.svg" width="15px"><span class="review_sum"> 집중돼요</span>
+                                        </div>
+                                   </div>     
+                              </div>
+                              <div class="shipping">
+                                   <div class="shipping_sum">당일배송</div>
+                                   <div class="shipping_spec">지금 주문하면<br><span class="bold">오늘(2/2,목)</span><br>도착예정</span></div>
+                              </div>
+                              <div class="buy">
+                                   <button class="cart"><a href="#">장바구니</a></button>
+                                   <button class="buyNow"><a href="#">바로구매</a></button>
+                              </div>
+                         </div>          
+                    </div>
+
+       <!-- 베스트셀러 목록 5 -->
+       <div class="bookInfo_wrap">
+          <div class="bookInfo">
+               <div class="img"><img src="./image/booklist5.jpeg"></div>
+               <div class="info">
+                    <div class="listNum">Best5</div>
+                    <div class="badge">
+                         <div class="badge_md">오늘의 선택</div>
+                         <div class="badge_md">MD의 선택</div>
+                         <div class="badge_event">이벤트</div>
+                         <div class="badge_gift">사은품</div>
+                         <div class="badge_incDdc">소득공제</div>
+                    </div>
+                    <div class="bookTitle">작별인사</div>
+                    <div class="bookPub">김영하 · 복복서가 · 2022.05.02</div>
+                    <div class="bookPrice"><span class="greenAcc">10%</span> 12,600원<span class="originPrice">14,000원</span><span class="bookPage"> | 700p</span></div>
+                    <div class="about">김영하가 『살인자의 기억법』 이후 9 년 만에 내놓는 장편소설 『작별인사』는 그리 멀지 않은 미래를 배경으로, 별안간 삶이 송두리째 뒤흔들린 한 소년의 여정을 좇는다. 유명한 IT 기업의 연구원인 아버지와 쾌적하고 평화롭게 살아가던 철이는 어느날 갑자기 수용소로 끌려가 난생처음 날것의 감정으로 가득한 혼돈의 세계에 맞닥뜨리게 되면서 정신적, 신체적 위기에 직면한다. 동시에 자신처럼 사회에서 배제된 자들을 만나 처음으로 생생한 소속감을 느끼고 따뜻한 우정도 싹틔운다. 철이는 그들과 함께 수용소를 탈출하여 집으로 돌아가기 위해 길을 떠나지만 그 여정에는 피할 수 없는 질문이 기다리고 있다.</div>
+                    <div class="review">
+                         <div class="rate">
+                              <img src="./image/clover.png" width="15px"> 9.5 <span class="gray">(702개의 리뷰) / </span>
+                              <img src="./image/left-quote.svg" width="15px"><span class="review_sum"> 고마워요</span>
+                         </div>
+                    </div>     
+               </div>
+               <div class="shipping">
+                    <div class="shipping_sum">당일배송</div>
+                    <div class="shipping_spec">지금 주문하면<br><span class="bold">오늘(2/2,목)</span><br>도착예정</span></div>
+               </div>
+               <div class="buy">
+                    <button class="cart"><a href="#">장바구니</a></button>
+                    <button class="buyNow"><a href="#">바로구매</a></button>
+               </div>
+          </div>          
+     </div>
+     
+
+     
+</body>
+</html>
