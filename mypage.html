@@ -1,283 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
-    .garden1 {
-        display: flex;
-        width: 100%;
-        height: 350px;
-        /* border: 1px solid black; */
-        /* background-color: rgb(60, 62, 170); */
-    }
+  </head>
 
-    .garden1 span {
-        font-size: 25px;
-    }
-
-    .info_wrap {
-        width: 20%;
-        padding: 10px;
-        /* border: 1px solid black; */
-        box-sizing: content-box;
-    }
-
-    .picklist {
-        display: flex;
-        justify-content: center;
-        /* border: 1px solid green; */
-        background-color: lightgray;
-        border-radius: 10px;
-        text-align: center;
-        margin: auto 0;
-        margin-top: 40px;
-        padding: 10px;
-        box-sizing: content-box;
-    }
-
-    .picklist a {
-        text-decoration: none;
-        font-size: 20px;
-        font-weight: bold;
-        color: #000;
-    }
-
-    .inner {
-        width: 60px;
-        margin: auto 0;
-    }
-
-
-    .nim {
-        text-align: center;
-    }
-
-    .nim img {
-        border-radius: 50%;
-    }
-
-
-    .g_ul {
-        display: flex;
-    }
-
-    .g_ul li {
-        width: 300px;
-        margin: 20px;
-        list-style: none;
-    }
-
-    .wrap {
-        width: 100%;
-        display: flex;
-    }
-
-    aside {
-        /* border: 5px solid black; */
-        width: 10%;
-        flex-wrap: nowrap;
-        display: flex;
-        flex-direction: column;
-    }
-
-
-
-    aside ul {
-        list-style: none;
-    }
-
-    .g_ul2 a {
-        color: #000;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    .g_ul2 a:hover {
-        text-decoration: underline;
-    }
-
-    section {
-        width: 90%;
-    }
-
-    section a {
-        text-decoration: none;
-        color: #000;
-    }
-
-
-    .gsection1 {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        height: 200px;
-        /* border: 1px solid black; */
-    }
-
-    .gsection1 a:hover {
-        color: aliceblue;
-    }
-
-    .gsection2 {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        height: 200px;
-        /* border: 1px solid black; */
-    }
-
-    .gsection2 a:hover {
-        color: aliceblue;
-    }
-
-    .gsection3 {
-        padding-top: 30px;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        height: 200px;
-        /* border: 1px solid black; */
-    }
-
-    .gsection3 a {
-        font-size: 15px;
-    }
-
-    .gsection3 a:hover {
-        text-decoration: underline;
-    }
-
-    .picklist {
-        display: flex;
-    }
-
-    .pick {
-        width: 60px;
-        /* border: 1px solid black; */
-        border-radius: 10px;
-        text-align: center;
-    }
-
-    .gitem1 {
-        background-color: lightgray;
-        border: 1px solid lightgray;
-        border-radius: 20px;
-        width: 200px;
-        height: 100px;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        line-height: 100px;
-        /* 텍스트 세로정렬 */
-        margin: auto 10px;
-    }
-
-    .gitem2 {
-        background-color: lightgray;
-        border: 1px solid lightgray;
-        border-radius: 20px;
-        width: 200px;
-        height: 100px;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        line-height: 50px;
-        margin: auto 10px;
-
-    }
-
-    .tp {
-        text-align: center;
-    }
-</style>
-
-<body>
-
+  <body>
     <div class="garden1">
-        <div class="info_wrap">
-            <a href="#"><img src="image/house-solid (1).svg" width="30px" alt="홈"></a>
+      <div class="info_wrap">
+        <a href="main.html"
+          ><img src="image/house-solid (1).svg" width="30px" alt="홈"
+        /></a>
 
-            <div class="nim">
-                <img src="image/user-tie-solid.svg" width="120px" alt="프로필이미지">
-                <br> <span> Acron 님 </span>
+        <div class="nim">
+          <img
+            src="image/user-tie-solid.svg"
+            width="120px"
+            alt="프로필이미지"
+          />
+          <br />
+          <span> Acron 님 </span>
 
-
-
-                <div class="picklist">
-                    <div class="inner"><a href="#">찜<br>0</a></div>
-                    <hr>
-                    <div class="inner"><a href="#">리스트<br>0</a></div>
-                </div>
+          <div class="picklist">
+            <div class="inner">
+              <a href="#">찜<br />0</a>
             </div>
+            <hr />
+            <div class="inner">
+              <a href="#">리스트<br />0</a>
+            </div>
+          </div>
         </div>
-        <ul class="g_ul">
-            <li><img src="media/9788997575169.jpg" alt="추천도서1"></li>
-            <li><img src="media/9791161571188.jpg" alt="추천도서2"></li>
-            <li><img src="media/9791190538510.jpg" alt="추천도서3"></li>
-        </ul>
+      </div>
+      <ul class="g_ul">
+        <li><img src="media/9788997575169.jpg" alt="추천도서1" /></li>
+        <li><img src="media/9791161571188.jpg" alt="추천도서2" /></li>
+        <li><img src="media/9791190538510.jpg" alt="추천도서3" /></li>
+      </ul>
     </div>
 
     <div class="wrap">
-        <aside>
-            <ul class="g_ul2">
-                <li><a href="#">쇼핑내역</a></li>
-                <li><a href="#">주문/배송목록</a></li>
-                <li><a href="#">선물함</a></li>
-                <li><a href="#">온.오프라인 영수증</a></li>
-                <li><a href="#">영수증 후 적립</a> </li>
-            </ul>
-            <ul class="g_ul2">
-                <li><a href="#">혜택/포인트</a></li>
-                <li><a href="#">쿠폰</a></li>
-                <li><a href="#">통합포인트</a></li>
-                <li><a href="#">에이콘e캐시</a></li>
-                <li><a href="#">에이콘캐시</a></li>
-                <li><a href="#">기프트카드</a></li>
-                <li><a href="#">마일리지</a></li>
-            </ul>
-            <ul class="g_ul2">
-                <li><a href="#">문의내역</a></li>
-                <li><a href="#">1:1 문의</a></li>
-                <li><a href="#">상품문의</a></li>
-            </ul>
-            <ul class="g_ul2">
-                <li><a href="#">회원정보</a></li>
-                <li><a href="#">배송주소록</a></li>
-                <li><a href="#">MY매장</a></li>
-                <li><a href="#">회원정보관리</a></li>
-                <li><a href="#">나의 회원등급</a></li>
-            </ul>
-        </aside>
+      <aside>
+        <ul class="g_ul2">
+          <li><a href="#">쇼핑내역</a></li>
+          <li><a href="#">주문/배송목록</a></li>
+          <li><a href="#">선물함</a></li>
+          <li><a href="#">온.오프라인 영수증</a></li>
+          <li><a href="#">영수증 후 적립</a></li>
+        </ul>
+        <ul class="g_ul2">
+          <li><a href="#">혜택/포인트</a></li>
+          <li><a href="#">쿠폰</a></li>
+          <li><a href="#">통합포인트</a></li>
+          <li><a href="#">에이콘e캐시</a></li>
+          <li><a href="#">에이콘캐시</a></li>
+          <li><a href="#">기프트카드</a></li>
+          <li><a href="#">마일리지</a></li>
+        </ul>
+        <ul class="g_ul2">
+          <li><a href="#">문의내역</a></li>
+          <li><a href="#">1:1 문의</a></li>
+          <li><a href="#">상품문의</a></li>
+        </ul>
+        <ul class="g_ul2">
+          <li><a href="#">회원정보</a></li>
+          <li><a href="#">배송주소록</a></li>
+          <li><a href="#">MY매장</a></li>
+          <li><a href="#">회원정보관리</a></li>
+          <li><a href="#">나의 회원등급</a></li>
+        </ul>
+      </aside>
 
-        <!-- 섹션 -->
-        <section>
-            <div class="gsection1">
-                <div class="gitem1"><a href="#">쿠폰</a></div> <br>
-                <div class="gitem1"><a href="#">통합포인트</a></div>
-                <div class="gitem1"><a href="#">e교환</a></div>
-                <div>&nbsp;&nbsp;</div>
-                <div class="gitem1"><a href="#">에이콘e캐시</a></div>
-            </div>
+      <!-- 섹션 -->
+      <section>
+        <div class="gsection1">
+          <div class="gitem1"><a href="#">쿠폰</a></div>
+          <br />
+          <div class="gitem1"><a href="#">통합포인트</a></div>
+          <div class="gitem1"><a href="#">e교환</a></div>
+          <div>&nbsp;&nbsp;</div>
+          <div class="gitem1"><a href="#">에이콘e캐시</a></div>
+        </div>
 
-            <div class="gsection2">
-                <div class="gitem2"><a href="#">예치금 <br>0원</a></div>
-                <div class="gitem2"><a href="#">에이콘캐시 <br>0원</a></div>
-                <div class="gitem2"><a href="#">기프트카트 <br>0장</a></div>
-                <div class="gitem2"><a href="#">마일리지 <br>0원</a></div>
-            </div>
-            <br>
-            <p class="tp">라이브러리 리스트</p>
-            <div class="gsection3"> <span>나만의 리스트를 만들고<br>
-                    나의 기억을 기록해보세요.</span> <br>
-                <a href="#">추가하기</a>
-            </div>
-        </section>
+        <div class="gsection2">
+          <div class="gitem2">
+            <a href="#">예치금 <br />0원</a>
+          </div>
+          <div class="gitem2">
+            <a href="#">에이콘캐시 <br />0원</a>
+          </div>
+          <div class="gitem2">
+            <a href="#">기프트카트 <br />0장</a>
+          </div>
+          <div class="gitem2">
+            <a href="#">마일리지 <br />0원</a>
+          </div>
+        </div>
+        <br />
+        <p class="tp">라이브러리 리스트</p>
+        <div class="gsection3">
+          <span
+            >나만의 리스트를 만들고<br />
+            나의 기억을 기록해보세요.</span
+          >
+          <br />
+          <a href="#">추가하기</a>
+        </div>
+      </section>
     </div>
-</body>
 
+    <hr />
+    <footer>
+      <!--  -->
+      <div class="footer_menu">
+        <div class="footer_menu_area">
+          <ul>
+            <li><a class="a_none" href="">회사소개</a></li>
+            <li><a class="a_none" href="">이용약관</a></li>
+            <li><a href="">개인정보처리방침</a></li>
+            <li><a class="a_none" href="">청소년보호정책</a></li>
+            <li><a class="a_none" href="">고객센터</a></li>
+            <li><a class="a_none" href="">협력사</a></li>
+            <li><a class="a_none" href="">제휴제안</a></li>
+            <li><a class="a_none" href="">광고문의</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="footer_wrap">
+        <div class="footer_info">
+          <div class="footer_logo">에이콘문고</div>
+          <div>
+            <p class="footer_text">
+              ㈜ 에이콘문고 홍대 대표이사 : E조 <br />
+              사업자등록번호 : 123-45-6789 <br />
+              대표전화 : 1234-5678 (발신자 부담전화) 팩스 : 1234-5678-1234
+              (지역번호공통) <br />
+              서울특별시 통신판매업신고번호 : 제 653호 ▶<a href=""
+                >사업자정보확인</a
+              >
+            </p>
+            <p class="footer_text">
+              COPYRIGHT(C) ACRON BOOK CENTRE ALL RIGHTS RESERVED.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer_info">
+          <p class="footer_text">
+            LG U+ 구매안전서비스 ▶ <a href="">서비스 가입 확인</a>
+          </p>
+          <p class="footer_text">
+            고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한
+            LG유플러스의 구매안전서비스를 이용하실 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
