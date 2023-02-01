@@ -22,34 +22,131 @@
     <title>Document</title>
     <style>
         .main_container *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
             /* border: 1px solid black; */
+        }
+        .mypage_background .gard{
+            width: 100%;
+            height: 300px;
+            background: url("https://contents.kyobobook.co.kr/resources/fo/images/common/ink/bg_myroom_main@2x.png");
+            background-size: cover;
+            position: absolute;
+            z-index: -1;
+        }
+        .mypage_main_container{
+            display: flex;
+            justify-content: space-between;
+        }
+        .mypage_left{
+            width: 288px;
+            padding: 24px;
+        }
+        .user_info{
+            height: 300px;
+        }
+        .user_img{
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: url("media/871_1611_2110.jpg") center;
+            background-size: cover;
+        }
+        .user_img_change{
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: url("media/btn_profile_setting@2x.png") center;
+            background-size: cover;position: absolute;
+        }
+        .grade{
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: #33b052;
+        }
+        .ululu ul{
+            display: flex;
+        }
+        .ululu ul li{
+            display: flex;
+            flex-direction: column;
+        }
+        .mypage_right{
+            width: 1080px;
+        }
+        .recommend_ctrl span{
+            padding: 4px 8px;
+            background: #4dac27;
+        }
+        .recommend_wrap ul{
+            display: flex;
+            justify-content: space-between;
+        }
+        .recommend_wrap ul li{
+            width: 288px;
+            height: 240px;
+            border-radius: 20px;
+            background: url("media/9791190538510.jpg") center;
+            background-size: 120%;
+        }
+        .recommend_wrap ul li .blur{
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+        }
+        .point{
+            display: flex;
+            justify-content: space-between;
+        }
+        .point div{
+            width: 240px;
+            height: 144px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            background: #eee;
+        }
+        .point22 ul{
+            height: 108px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .point22 ul li{
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="logo_area">
-            <h1>
-                <a class="logo" href="aa.html">Acorn 에이콘문고</a>
-            </h1>
-        </div>
-        <div class="search_area">
-            <div class="input-box">
-                <a href="#"><i class="fa-solid i1 fa-magnifying-glass fa-2x"></i></a>
-                <input type="text" />
-                <a href="#"><i class="fa-solid fa-keyboard fa-2x"></i></a>
-                <a href="#"><i class="fa-solid fa-microphone fa-2x"></i></a>
-            </div>
-        </div>
-    </div>
     <main>
-        <div class="">
+        <div class="mypage_background">
+            <div class="gard"></div>
             <div class="main_container mypage_main_container">
-                <div class="">
-                    <div class="user_info"></div>
+                <div class="mypage_left">
+                    <div class="user_info">
+                        <div class="user_img">
+                            <div class="user_img_change"></div>
+                        </div>
+                        <div class="user_name">
+                            <span class="name">eteam님</span>
+                            <span class="grade">VIP</span>
+                        </div>
+                        <div class="ululu">
+                            <ul>
+                                <li>
+                                    <span>찜</span>
+                                    <span>0</span>
+                                </li>
+                                <li>
+                                    <span>리스트</span>
+                                    <span>0</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="">
                         <ul>
                             <li>
@@ -122,169 +219,73 @@
                         </ul>
                     </div>
                 </div>
-                <div class="">
-                    <div class=""></div>
-                    <div class=""></div>
-                    <div class=""></div>
+                <div class="mypage_right">
+                    <div class="recommend_wrap">
+                        <div class="recommend_ctrl">
+                            <span>추천</span>
+                            <input type="radio">
+                            <label for="">에이콘문고</label>
+                            <input type="radio">
+                            <label for="">에이콘문고</label>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="blur">
+                                    <img src="" alt="">
+                                    <div class="bw_2_1">
+                                        [국내도서] 참을 수 없는 존재의 가벼움
+                                    </div>
+                                    <div class="bw_2_2">
+                                        <span class="bw_2_2_1">
+                                            <span class="bw_2_2_1_1">10%</span>
+                                            <span class="bw_2_2_1_3">13,500원</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="point">
+                        <div class=""></div>
+                        <div class=""></div>
+                        <div class=""></div>
+                        <div class=""></div>
+                    </div>
+                    <div class="point22">
+                        <ul>
+                            <li>
+                                <span>예치금</span>
+                                <span>0 원</span>
+                            </li>
+                            <li>
+                                <span>교보캐시</span>
+                                <span>0 원</span>
+                            </li>
+                            <li>
+                                <span>기프트카드</span>
+                                <span>0 장</span>
+                            </li>
+                            <li>
+                                <span>마일리지</span>
+                                <span>0 원</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+
+
+
+
                 </div>
-            </div>
-        </div>
-        
-
-
-
-
-            <div class="garden1">
-                <div class="info_wrap">
-                    <a href="main.html">
-                        <img src="image/house-solid (1).svg" width="30px" alt="홈"/>
-                    </a>
-                    <div class="nim">
-                        <img src="image/user-tie-solid.svg" width="120px" alt="프로필이미지"/>
-                        <span> Acron 님 </span>
-                        <div class="picklist">
-                            <div class="inner">
-                                <a href="#">찜<br />0</a>
-                            </div>
-                            <hr />
-                            <div class="inner">
-                                <a href="#">리스트<br />0</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <ul class="g_ul">
-                    <li>
-                        <img src="media/9788997575169.jpg" alt="추천도서1" />
-                    </li>
-                    <li>
-                        <img src="media/9791161571188.jpg" alt="추천도서2" />
-                    </li>
-                    <li>
-                        <img src="media/9791190538510.jpg" alt="추천도서3" />
-                    </li>
-                </ul>
-            </div>
-            <div class="wrap">
-                <aside>
-                    <ul class="g_ul2">
-                        <li><a href="#">쇼핑내역</a></li>
-                        <li><a href="#">주문/배송목록</a></li>
-                        <li><a href="#">선물함</a></li>
-                        <li><a href="#">온.오프라인 영수증</a></li>
-                        <li><a href="#">영수증 후 적립</a></li>
-                    </ul>
-                    <ul class="g_ul2">
-                        <li><a href="#">혜택/포인트</a></li>
-                        <li><a href="#">쿠폰</a></li>
-                        <li><a href="#">통합포인트</a></li>
-                        <li><a href="#">에이콘e캐시</a></li>
-                        <li><a href="#">에이콘캐시</a></li>
-                        <li><a href="#">기프트카드</a></li>
-                        <li><a href="#">마일리지</a></li>
-                    </ul>
-                    <ul class="g_ul2">
-                        <li><a href="#">문의내역</a></li>
-                        <li><a href="#">1:1 문의</a></li>
-                        <li><a href="#">상품문의</a></li>
-                    </ul>
-                    <ul class="g_ul2">
-                        <li><a href="#">회원정보</a></li>
-                        <li><a href="#">배송주소록</a></li>
-                        <li><a href="#">MY매장</a></li>
-                        <li><a href="#">회원정보관리</a></li>
-                        <li><a href="#">나의 회원등급</a></li>
-                    </ul>
-                </aside>
-                        
-                            <!-- 섹션 -->
-                <section>
-                    <div class="gsection1">
-                        <div class="gitem1">
-                            <a href="#">쿠폰</a>
-                        </div>
-                        <br />
-                        <div class="gitem1">
-                            <a href="#">통합포인트</a>
-                        </div>
-                        <div class="gitem1">
-                            <a href="#">e교환</a>
-                        </div>
-                        <div>&nbsp;&nbsp;</div>
-                        <div class="gitem1">
-                            <a href="#">에이콘e캐시</a>
-                        </div>
-                    </div>
-                    <div class="gsection2">
-                        <div class="gitem2">
-                            <a href="#">예치금 <br />0원</a>
-                        </div>
-                        <div class="gitem2">
-                            <a href="#">에이콘캐시 <br />0원</a>
-                        </div>
-                        <div class="gitem2">
-                            <a href="#">기프트카트 <br />0장</a>
-                        </div>
-                        <div class="gitem2">
-                            <a href="#">마일리지 <br />0원</a>
-                        </div>
-                    </div>
-                    <br />
-                    <p class="tp">라이브러리 리스트</p>
-                    <div class="gsection3">
-                        <span>
-                            나만의 리스트를 만들고<br />
-                            나의 기억을 기록해보세요.
-                        </span>
-                        <br />
-                        <a href="#">추가하기</a>
-                    </div>
-                </section>
             </div>
         </div>
     </main>
-    <footer>
-        <div class="footer_menu">
-            <div class="footer_menu_area">
-                <ul>
-                    <li><a class="a_none" href="">회사소개</a></li>
-                    <li><a class="a_none" href="">이용약관</a></li>
-                    <li><a href="">개인정보처리방침</a></li>
-                    <li><a class="a_none" href="">청소년보호정책</a></li>
-                    <li><a class="a_none" href="">고객센터</a></li>
-                    <li><a class="a_none" href="">협력사</a></li>
-                    <li><a class="a_none" href="">제휴제안</a></li>
-                    <li><a class="a_none" href="">광고문의</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer_wrap">
-            <div class="footer_info">
-                <div class="footer_logo">에이콘문고</div>
-                    <div>
-                        <p class="footer_text">
-                            ㈜ 에이콘문고 홍대 대표이사 : E조 <br />
-                            사업자등록번호 : 123-45-6789 <br />
-                            대표전화 : 1234-5678 (발신자 부담전화) 팩스 : 1234-5678-1234
-                            (지역번호공통) <br />
-                            서울특별시 통신판매업신고번호 : 제 653호 ▶<a href="">사업자정보확인</a>
-                        </p>
-                        <p class="footer_text">
-                            COPYRIGHT(C) ACRON BOOK CENTRE ALL RIGHTS RESERVED.
-                        </p>
-                    </div>
-                </div>
-                <div class="footer_info">
-                    <p class="footer_text">
-                        LG U+ 구매안전서비스 ▶ <a href="">서비스 가입 확인</a>
-                    </p>
-                    <p class="footer_text">
-                        고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한
-                        LG유플러스의 구매안전서비스를 이용하실 수 있습니다.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
