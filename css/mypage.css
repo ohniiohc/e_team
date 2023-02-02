@@ -1,186 +1,216 @@
-.garden1 {
-    display: flex;
+.mypage_background{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.mypage_background .gradation{
     width: 100%;
-    height: 350px;
-    /* border: 1px solid black; */
-    /* background-color: rgb(60, 62, 170); */
+    height: 300px;
+    background: url("../media/mypage_background.png");
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
 }
-
-.garden1 span {
-    font-size: 25px;
-}
-
-.info_wrap {
-    width: 20%;
-    padding: 10px;
-    /* border: 1px solid black; */
-    box-sizing: content-box;
-}
-
-.picklist {
+.mypage_main_container{
     display: flex;
+    justify-content: space-between;
+}
+/* ------------------------------------------- */
+.mypage_main_container .mypage_left{
+    width: 288px;
+    padding: 24px;
+}
+.mypage_main_container .mypage_user_info{
+    height: 276px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    /* border: 1px solid green; */
-    background-color: lightgray;
-    border-radius: 10px;
-    text-align: center;
-    margin: auto 0;
-    margin-top: 40px;
-    padding: 10px;
-    box-sizing: content-box;
 }
-
-.picklist a {
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;
-}
-
-.inner {
-    width: 60px;
-    margin: auto 0;
-}
-
-
-.nim {
-    text-align: center;
-}
-
-.nim img {
+.mypage_main_container .mypage_user_img{
+    width: 72px;
+    height: 72px;
+    margin-bottom: 10px;
     border-radius: 50%;
+    background: url("../media/mypage_profile_2.jpg") center;
+    background-size: cover;
+    position: relative;
 }
-
-
-.g_ul {
+.mypage_main_container .mypage_user_img_change{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: url("../media/mypage_profile_setting.png") center;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.mypage_main_container .mypage_user_name{
+    margin-bottom: 36px;
+}
+.mypage_main_container .user_name{
+    margin-right: 12px;
+}
+.mypage_main_container .user_grade{
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    background: #33b052;
+}
+.mypage_main_container .dibs ul{
+    width: 200px;
+    height: 80px;
+    background: rgba(51, 51, 51, 0.2);
+    border-radius: 20px;
     display: flex;
+    align-items: center;
 }
-
-.g_ul li {
-    width: 300px;
-    margin: 20px;
-    list-style: none;
-}
-
-.wrap {
-    width: 100%;
-    display: flex;
-}
-
-aside {
-    /* border: 5px solid black; */
-    width: 10%;
-    flex-wrap: nowrap;
+.mypage_main_container .dibs ul li{
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
-
-
-
-aside ul {
-    list-style: none;
+.mypage_main_container .dibs ul li span{
+    padding-left: 18px;
 }
-
-.g_ul2 a {
-    color: #000;
-    text-decoration: none;
+.mypage_main_container .dibs ul li:nth-child(2) span{
+    border-left: 1px solid #fff;
+}
+.mypage_main_container .dibs ul li span:nth-child(1){
+    color: #ddd;
+    font-size: 12px;
+    padding-bottom: 8px;
+}
+/* ------------------------------------------- */
+.mypage_main_container .left_menu{
+    margin-top: 24px;
+}
+.mypage_main_container .left_menu h3{
+    font-weight: bold;
+}
+.mypage_main_container .left_menu ul li ul{
+    margin-bottom: 36px;
+}
+.mypage_main_container .left_menu ul li ul li{
+    font-size: 14px;
+    margin: 12px 0;
+}
+.mypage_main_container .left_menu ul li ul li:hover{
+    text-decoration: underline;
+}
+/* ------------------------------------------- */
+.mypage_main_container .mypage_right{
+    width: 1080px;
+    padding: 24px 24px 0 0;
+}
+/* ------------------------------------------- */
+.mypage_main_container .recommend_ctrl{
+    padding: 48px 0 24px 0;
+}
+.mypage_main_container .recommend_ctrl span:nth-child(1){
+    padding: 8px 12px;
+    border-radius: 18px;
+    font-size: 14px;
+    color: #fff;
+    background: #4dac27;
+}
+.mypage_main_container .recommend_ctrl span:nth-child(2){
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+.mypage_main_container .recommend_wrap ul{
+    display: flex;
+    justify-content: space-between;
+}
+.mypage_main_container .recommend_menu .recommend_book{
+    width: 288px;
+    height: 240px;
+    border-radius: 20px;
+    background-size: cover;
+}
+.mypage_main_container .recommend_book_1{
+    background: url("../media/mypage_book_1.jpg") center;
+}
+.mypage_main_container .recommend_book_2{
+    background: url("../media/mypage_book_2.jpg") center;
+}
+.mypage_main_container .recommend_book_3{
+    background: url("../media/mypage_book_3.jpg") center;
+}
+.mypage_main_container .recommend_menu ul li .filter_blur{
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    backdrop-filter: blur(24px) contrast(200%) brightness(0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mypage_main_container .filter_blur img{
+    width: 84px;
+}
+.mypage_main_container .recommend_book_detail{
+    margin-left: 24px;
+}
+.mypage_main_container .recommend_book_detail a{
+    color: #fff;
+}
+.mypage_main_container .recommend_book_price{
+    margin-top: 12px;
     font-size: 14px;
 }
-
-.g_ul2 a:hover {
-    text-decoration: underline;
-}
-
-section {
-    width: 90%;
-}
-
-section a {
-    text-decoration: none;
-    color: #000;
-}
-
-
-.gsection1 {
+/* ------------------------------------------- */
+.mypage_main_container .right_menu_1{
+    margin: 48px 0;
     display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-    /* border: 1px solid black; */
+    justify-content: space-between;
 }
-
-.gsection1 a:hover {
-    color: aliceblue;
-}
-
-.gsection2 {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-    /* border: 1px solid black; */
-}
-
-.gsection2 a:hover {
-    color: aliceblue;
-}
-
-.gsection3 {
-    padding-top: 30px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-    /* border: 1px solid black; */
-}
-
-.gsection3 a {
-    font-size: 15px;
-}
-
-.gsection3 a:hover {
-    text-decoration: underline;
-}
-
-.picklist {
-    display: flex;
-}
-
-.pick {
-    width: 60px;
-    /* border: 1px solid black; */
+.mypage_main_container .right_category{
+    width: 240px;
+    height: 144px;
+    margin: auto 0;
+    padding: 24px;
     border-radius: 10px;
-    text-align: center;
+    border: 1px solid #ddd;
+    background: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
-
-.gitem1 {
-    background-color: lightgray;
-    border: 1px solid lightgray;
-    border-radius: 20px;
-    width: 200px;
-    height: 100px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 100px;
-    /* 텍스트 세로정렬 */
-    margin: auto 10px;
+.mypage_main_container .right_category img{
+    width: 60px;
 }
-
-.gitem2 {
-    background-color: lightgray;
-    border: 1px solid lightgray;
-    border-radius: 20px;
-    width: 200px;
-    height: 100px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 50px;
-    margin: auto 10px;
-
+.mypage_main_container .right_category_detail{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
 }
-
-.tp {
-    text-align: center;
+/* ------------------------------------------- */
+.mypage_main_container .right_menu_2 ul{
+    height: 108px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.mypage_main_container .right_menu_2 ul li{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+.mypage_main_container .right_menu_2 ul li span{
+    padding-left: 18px;
+    border-left: 2px solid #ddd;
+}
+.mypage_main_container .right_menu_2 ul li:nth-child(1) span{
+    border-left: none;
+}
+.mypage_main_container .right_menu_2 ul li span:nth-child(2){
+    padding-top: 12px;
+    color: #333;
+    font-size: 14px;
 }
