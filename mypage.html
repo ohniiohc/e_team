@@ -1,165 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="css/style.css" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-
-  <body>
-    <div class="garden1">
-      <div class="info_wrap">
-        <a href="main.html"
-          ><img src="image/house-solid (1).svg" width="30px" alt="홈"
-        /></a>
-
-        <div class="nim">
-          <img
-            src="image/user-tie-solid.svg"
-            width="120px"
-            alt="프로필이미지"
-          />
-          <br />
-          <span> Acron 님 </span>
-
-          <div class="picklist">
-            <div class="inner">
-              <a href="#">찜<br />0</a>
+<head>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo_area">
+            <h1>
+                <a class="logo" href="main.html">Acorn 에이콘문고</a>
+            </h1>
+        </div>
+        <div class="search_area">
+            <div class="input-box">
+                <a href="#"><i class="fa-solid i1 fa-magnifying-glass fa-2x"></i></a>
+                <input type="text" />
+                <a href="#"><i class="fa-solid fa-keyboard fa-2x"></i></a>
+                <a href="#"><i class="fa-solid fa-microphone fa-2x"></i></a>
             </div>
-            <hr />
-            <div class="inner">
-              <a href="#">리스트<br />0</a>
+        </div>                
+        <div class="servicemenu_area">
+            <div class="servicemenu">
+                <a href="shoppingcart.html"><i class="fa-solid fa-cart-plus fa-2x"></i></a>
+                <span class="gard">|</span>
+                <a href="mypage.html"><i class="fa-solid fa-person fa-2x"></i></a>
+                <span class="gard">|</span>
+                <a href="login.html"><i class="fa-solid fa-right-to-bracket fa-2x"></i></a>
             </div>
-          </div>
         </div>
-      </div>
-      <ul class="g_ul">
-        <li><img src="media/9788997575169.jpg" alt="추천도서1" /></li>
-        <li><img src="media/9791161571188.jpg" alt="추천도서2" /></li>
-        <li><img src="media/9791190538510.jpg" alt="추천도서3" /></li>
-      </ul>
     </div>
+    <main>
+        <div class="mypage_background">
+            <div class="gradation"></div>
+            <div class="main_container mypage_main_container">
+                <div class="mypage_left">
+                    <div class="mypage_user_info">
+                        <div class="mypage_user_img">
+                            <div class="mypage_user_img_change"></div>
+                        </div>
+                        <div class="mypage_user_name">
+                            <span class="user_name">eteam님</span>
+                            <span class="user_grade">VIP</span>
+                        </div>
+                        <div class="dibs">
+                            <ul>
+                                <li>
+                                    <span>찜</span>
+                                    <span>3</span>
+                                </li>
+                                <li>
+                                    <span>리스트</span>
+                                    <span>0</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="left_menu">
+                        <ul>
+                            <li>
+                                <h3>쇼핑내역</h3>
+                                <ul>
+                                    <li><a href="">주문/배송목록</a></li>
+                                    <li><a href="">선물함</a></li>
+                                    <li><a href="">온.오프라인 영수증</a></li>
+                                    <li><a href="">영수증 후 적립</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3>라이브러리</h3>
+                                <ul>
+                                    <li><a href="">메인</a></li>
+                                    <li><a href="">리스트</a></li>
+                                    <li><a href="">e-라이브러리</a></li>
+                                    <li><a href="">코멘트</a></li>
+                                    <li><a href="">클로버 리뷰</a></li>
+                                    <li><a href="">문장수집</a></li>
+                                    <li><a href="">찜</a></li>
+                                    <li><a href="">구독</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3>활동내역</h3>
+                                <ul>
+                                    <li><a href="">커뮤니티 활동 내역</a></li>
+                                    <li><a href="">이벤트 참여 내역</a></li>
+                                    <li><a href="">문화공간 이용 내역</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3>혜택/포인트</h3>
+                                <ul>
+                                    <li><a href="">쿠폰</a></li>
+                                    <li><a href="">통합포인트</a></li>
+                                    <li><a href="">예치금</a></li>
+                                    <li><a href="">에이콘e캐시</a></li>
+                                    <li><a href="">에이콘캐시</a></li>
+                                    <li><a href="">e교환권</a></li>
+                                    <li><a href="">기프트카드</a></li>
+                                    <li><a href="">마일리지</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3>문의내역</h3>
+                                <ul>
+                                    <li><a href="">1:1 문의</a></li>
+                                    <li><a href="">상품문의</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3>회원정보</h3>
+                                <ul>
+                                    <li><a href="">배송주소록</a></li>
+                                    <li><a href="">MY매장</a></li>
+                                    <li><a href="">회원정보관리</a></li>
+                                    <li><a href="">에이콘북클럽 카드 관리</a></li>
+                                    <li><a href="">나의 회원등급</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3>알림센터</h3>
+                                <ul>
+                                    <li><a href="">알림함</a></li>
+                                    <li><a href="">알림신청내역</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mypage_right">
+                    <div class="recommend_wrap">
+                        <div class="recommend_ctrl">
+                            <span>추천</span>
+                            <span>에이콘문고</span>
+                        </div>
+                        <div class="recommend_menu">
+                            <ul>
+                                <li class="recommend_book recommend_book_1">
+                                    <div class="filter_blur">
+                                        <a href="">
+                                            <img src="media/mypage_book_1.jpg" alt="">
+                                        </a>
+                                        <div class="recommend_book_detail">
+                                            <a href="">
+                                                <div class="recommend_book_title">
+                                                    참을 수 없는<br>존재의 가벼움
+                                                </div>
+                                                <div class="recommend_book_price">
+                                                    10% 13,500원
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="recommend_book recommend_book_2">
+                                    <div class="filter_blur">
+                                        <a href="">
+                                            <img src="media/mypage_book_2.jpg" alt="">
+                                        </a>
+                                        <div class="recommend_book_detail">
+                                            <a href="">
+                                                <div class="recommend_book_title">
+                                                    컬티시 Cultish
+                                                </div>
+                                                <div class="recommend_book_price">
+                                                    10% 21,600원
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="recommend_book recommend_book_3">
+                                    <div class="filter_blur">
+                                        <a href="">
+                                            <img src="media/mypage_book_3.jpg" alt="">
+                                        </a>
+                                        <div class="recommend_book_detail">
+                                            <a href="">
+                                                <div class="recommend_book_title">
+                                                    이기적 유전자<br>(리커버:K)
+                                                </div>
+                                                <div class="recommend_book_price">
+                                                    10% 18,000원
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="right_menu_1">
+                        <div class="right_category right_category_1">
+                            <img src="media/mypage_coupon.png" alt="">
+                            <div class="right_category_detail">
+                                <div class="">쿠폰</div>
+                                <div class="">5장</div>
+                            </div>
+                        </div>
+                        <div class="right_category right_category_2">
+                            <img src="media/mypage_point.png" alt="">
+                            <div class="right_category_detail">
+                                <div class="">통합포인트</div>
+                                <div class="">31,240 P</div>
+                            </div>
+                        </div>
+                        <div class="right_category right_category_3">
+                            <img src="media/mypage_voucher.png" alt="">
+                            <div class="right_category_detail">
+                                <div class="">e교환권</div>
+                                <div class="">20,000 원</div>
+                            </div>
+                        </div>
+                        <div class="right_category right_category_4">
+                            <img src="media/mypage_cash.png" alt="">
+                            <div class="right_category_detail">
+                                <div class="">에이콘e캐시</div>
+                                <div class="">4,120 원</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right_menu_2">
+                        <ul>
+                            <li>
+                                <span>예치금</span>
+                                <span>436,210 원</span>
+                            </li>
+                            <li>
+                                <span>에이콘캐시</span>
+                                <span>2,100 원</span>
+                            </li>
+                            <li>
+                                <span>기프트카드</span>
+                                <span>7 장</span>
+                            </li>
+                            <li>
+                                <span>마일리지</span>
+                                <span>2,400 원</span>
+                            </li>
+                        </ul>
+                    </div>
 
-    <div class="wrap">
-      <aside>
-        <ul class="g_ul2">
-          <li><a href="#">쇼핑내역</a></li>
-          <li><a href="#">주문/배송목록</a></li>
-          <li><a href="#">선물함</a></li>
-          <li><a href="#">온.오프라인 영수증</a></li>
-          <li><a href="#">영수증 후 적립</a></li>
-        </ul>
-        <ul class="g_ul2">
-          <li><a href="#">혜택/포인트</a></li>
-          <li><a href="#">쿠폰</a></li>
-          <li><a href="#">통합포인트</a></li>
-          <li><a href="#">에이콘e캐시</a></li>
-          <li><a href="#">에이콘캐시</a></li>
-          <li><a href="#">기프트카드</a></li>
-          <li><a href="#">마일리지</a></li>
-        </ul>
-        <ul class="g_ul2">
-          <li><a href="#">문의내역</a></li>
-          <li><a href="#">1:1 문의</a></li>
-          <li><a href="#">상품문의</a></li>
-        </ul>
-        <ul class="g_ul2">
-          <li><a href="#">회원정보</a></li>
-          <li><a href="#">배송주소록</a></li>
-          <li><a href="#">MY매장</a></li>
-          <li><a href="#">회원정보관리</a></li>
-          <li><a href="#">나의 회원등급</a></li>
-        </ul>
-      </aside>
+                    
 
-      <!-- 섹션 -->
-      <section>
-        <div class="gsection1">
-          <div class="gitem1"><a href="#">쿠폰</a></div>
-          <br />
-          <div class="gitem1"><a href="#">통합포인트</a></div>
-          <div class="gitem1"><a href="#">e교환</a></div>
-          <div>&nbsp;&nbsp;</div>
-          <div class="gitem1"><a href="#">에이콘e캐시</a></div>
+                </div>
+            </div>
         </div>
-
-        <div class="gsection2">
-          <div class="gitem2">
-            <a href="#">예치금 <br />0원</a>
-          </div>
-          <div class="gitem2">
-            <a href="#">에이콘캐시 <br />0원</a>
-          </div>
-          <div class="gitem2">
-            <a href="#">기프트카트 <br />0장</a>
-          </div>
-          <div class="gitem2">
-            <a href="#">마일리지 <br />0원</a>
-          </div>
-        </div>
-        <br />
-        <p class="tp">라이브러리 리스트</p>
-        <div class="gsection3">
-          <span
-            >나만의 리스트를 만들고<br />
-            나의 기억을 기록해보세요.</span
-          >
-          <br />
-          <a href="#">추가하기</a>
-        </div>
-      </section>
-    </div>
-
-    <hr />
+    </main>
     <footer>
-      <!--  -->
-      <div class="footer_menu">
-        <div class="footer_menu_area">
-          <ul>
-            <li><a class="a_none" href="">회사소개</a></li>
-            <li><a class="a_none" href="">이용약관</a></li>
-            <li><a href="">개인정보처리방침</a></li>
-            <li><a class="a_none" href="">청소년보호정책</a></li>
-            <li><a class="a_none" href="">고객센터</a></li>
-            <li><a class="a_none" href="">협력사</a></li>
-            <li><a class="a_none" href="">제휴제안</a></li>
-            <li><a class="a_none" href="">광고문의</a></li>
-          </ul>
+        <div class="footer_menu">
+            <div class="footer_menu_area">
+                <ul>
+                    <li><a class="a_none" href="">회사소개</a></li>
+                    <li><a class="a_none" href="">이용약관</a></li>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a class="a_none" href="">청소년보호정책</a></li>
+                    <li><a class="a_none" href="">고객센터</a></li>
+                    <li><a class="a_none" href="">협력사</a></li>
+                    <li><a class="a_none" href="">제휴제안</a></li>
+                    <li><a class="a_none" href="">광고문의</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
-
-      <!--  -->
-      <div class="footer_wrap">
-        <div class="footer_info">
-          <div class="footer_logo">에이콘문고</div>
-          <div>
-            <p class="footer_text">
-              ㈜ 에이콘문고 홍대 대표이사 : E조 <br />
-              사업자등록번호 : 123-45-6789 <br />
-              대표전화 : 1234-5678 (발신자 부담전화) 팩스 : 1234-5678-1234
-              (지역번호공통) <br />
-              서울특별시 통신판매업신고번호 : 제 653호 ▶<a href=""
-                >사업자정보확인</a
-              >
-            </p>
-            <p class="footer_text">
-              COPYRIGHT(C) ACRON BOOK CENTRE ALL RIGHTS RESERVED.
-            </p>
-          </div>
+        <div class="footer_wrap">
+            <div class="footer_info">
+                <div class="footer_logo">에이콘문고</div>
+                    <div>
+                        <p class="footer_text">
+                            ㈜ 에이콘문고 홍대 대표이사 : E조 <br />
+                            사업자등록번호 : 123-45-6789 <br />
+                            대표전화 : 1234-5678 (발신자 부담전화) 팩스 : 1234-5678-1234
+                            (지역번호공통) <br />
+                            서울특별시 통신판매업신고번호 : 제 653호 ▶<a href="">사업자정보확인</a>
+                        </p>
+                        <p class="footer_text">
+                            COPYRIGHT(C) ACRON BOOK CENTRE ALL RIGHTS RESERVED.
+                        </p>
+                    </div>
+                </div>
+                <div class="footer_info">
+                    <p class="footer_text">
+                        LG U+ 구매안전서비스 ▶ <a href="">서비스 가입 확인</a>
+                    </p>
+                    <p class="footer_text">
+                        고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한
+                        LG유플러스의 구매안전서비스를 이용하실 수 있습니다.
+                    </p>
+                </div>
+            </div>
         </div>
-
-        <div class="footer_info">
-          <p class="footer_text">
-            LG U+ 구매안전서비스 ▶ <a href="">서비스 가입 확인</a>
-          </p>
-          <p class="footer_text">
-            고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한
-            LG유플러스의 구매안전서비스를 이용하실 수 있습니다.
-          </p>
-        </div>
-      </div>
     </footer>
-  </body>
+</body>
 </html>
