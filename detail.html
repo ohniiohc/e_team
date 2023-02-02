@@ -19,7 +19,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Detail페이지</title>
+    <script>
+      let index = 0;
+      let imgNames = [
+        "9788901260716.jpg",
+        "9788936438838.jpg",
+        "9788959897094.jpg",
+        "9788997575169.jpg",
+        "9791168473690.jpg",
+      ];
+
+      function changeImg() {
+        let imgGallery = document.getElementById("imgGallery");
+        index++;
+        if (index >= imgNames.length) index = 0;
+        imgGallery.src = "media/" + imgNames[index];
+      }
+    </script>
   </head>
   <body>
     <div class="header">
@@ -113,7 +130,190 @@
     </div>
 
     <section class="contents_wrap" id="contents">
-      <div class="detaiL_header"></div>
+      <div class="detaiL_header">
+        <div class="header_contents_inner">
+          <div class="detail_title_wrap">
+            <div class="title_area">
+              <h1>
+                <span class="prod_tilte">책 이름</span>
+              </h1>
+            </div>
+          </div>
+          <div class="detail_view_wrap">
+            <div class="detail_type_area">
+              <div class="detail_type_list_wrap">
+                <ul class="detail_type_list">
+                  <!-- 링크에 버튼 클릭 자바스크립트 추가해야함. -->
+                  <li class="type_list"><a href="#"></a></li>
+                  <li class="type_item"><a href="#"></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="detail_view_area">
+              <div class="detail_view_area_box1">
+                <div class="info_wrap">
+                  <div class="info_title">
+                    극장판 애니메이션<스즈메의 문단속> 원작소설
+                  </div>
+                  <div class="info_title">
+                    신카이 마코토 저자(글) 민경욱 번역
+                  </div>
+                  <div class="info_publish">대원씨아이 2023년 01월 13일</div>
+                  <div class="info_bestbox">
+                    <div class="best_title">
+                      <span class="info_title">주간베스트</span> 국내도서<span
+                        class="rank"
+                        >175</span
+                      >위 · 소설<span class="rank">20</span>위
+                    </div>
+                    <div class="best_text"></div>
+                  </div>
+                  <div class="info_reviewbox"></div>
+                </div>
+              </div>
+
+              <div class="detail_view_area_box2">
+                <div class="swiper_wrap active">
+                  <div class="swiper-container">
+                    <ul class="swiper-wrapper">
+                      <li
+                        class="swiper-slide"
+                        style="
+                          width: 380px;
+                          opacity: 1;
+                          transform: translated3d(0px, 0px, 0px);
+                          transition-duration: 0ms;
+                        "
+                      >
+                    
+                    <div class="blur_img_wrap">
+                      <div class="blur_img_box">
+                        <img src="/media/9788901260716.jpg" alt="" />
+                      </div>
+                      <div class="portrait_img_box">
+                        <img id="imgGallery"src="/media/9788901260716.jpg" style="width: 360px;alt="" />
+                      </div>
+                    </li>
+                  </ul>
+                    </div>
+                  </div>
+                  <div class="btn_wrap_image">
+                    <button class="btn_image"onclick="changeImg()">다음</button>
+                  </div>
+                </div>
+              
+
+              <div class="detail_view_area_box3">
+                <div class="price_wrap">
+                  <div class="badge_list_box">
+                    <span class="badge_md badge_line_primary"
+                      ><span class="text"
+                        >2023년 1월 31일 오늘의 선택</span
+                      ></span
+                    >
+                    <span class="badge_md badge_line_gray"
+                      ><span class="text">무료배송</span></span
+                    >
+                    <span class="badge_md badge_line_gray"
+                      ><span class="text">사은품</span></span
+                    >
+                    <br />
+                    <span class="badge_md badge_line_gray"
+                      ><span class="text">이벤트</span></span
+                    >
+                    <span class="badge_md badge_line_gray"
+                      ><span class="text">소득공제</span></span
+                    >
+                  </div>
+                  <div class="price_box">
+                    <div class="price">
+                      <span class="percent">10%</span>
+                      <span class="price">
+                        <span class="val"
+                          >11,700<span class="unit">원</span></span
+                        >
+                      </span>
+                      <span class="sale_price">
+                        <s class="val"> 13,000 <span class="unit">원</span> </s>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="guide_wrap">
+                  <div class="guide_box">
+                    <div class="guide_row">
+                      <div class="guide_title">적립/혜택</div>
+                      <div class="guide_cont">
+                        <div class="point_text">650p</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="guide_box">
+                    <div class="guide_row">
+                      <div class="guide_title">배송안내</div>
+                      <div class="guide_cont">
+                        <div class="delivery_type">무료배송</div>
+                      </div>
+                    </div>
+                    <div class="guide_row">
+                      <div class="guide_cont">
+                        <div class="delivery_guide_text">
+                          당일배송오늘(2/2,목)도착예정
+                        </div>
+                      </div>
+                    </div>
+                    <div class="guide_row">
+                      <div class="guide_cont">
+                        <div class="delivery_guide_where">
+                          서울시 종로구 종로1
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="alarm_wrap">
+                  <p class="alarm_text">
+                    알림 신청하시면 원하시는 정보를 <br />
+                    받아 보실 수 있습니다.
+                  </p>
+                  <div class="right_area">
+                    <button class="btn_line_primary">
+                      <span class="text">알람신청</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="info_text_wrap">
+                  <div class="info_text_inner">
+                    <div class="title_wrap">
+                      <p class="title_heading">
+                        <span class="ico_speech">알립니다.</span>
+                      </p>
+                    </div>
+                    <div class="title_wrap">
+                      <p class="title_heading">
+                        <span class="fc_spot"
+                          >초판 부록:오리지널 아크릴 책갈피(책에 포함) /스즈메의
+                          문단속 로고 볼펜(추가 선택</span
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="buy">
+                  <button class="cart">
+                    <a href="shoppingcart.html">장바구니</a>
+                  </button>
+                  <button class="buyNow">
+                    <a href="shoppingcart.html">바로구매</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <hr />
